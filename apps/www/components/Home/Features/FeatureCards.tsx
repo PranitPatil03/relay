@@ -2,14 +2,12 @@
 
 import { motion } from 'framer-motion'
 
-import AIIcon from '@/components/icons/AIIcon'
 import BoltIcon from '@/components/icons/BoltIcon'
 import ClickIcon from '@/components/icons/ClickIcon'
 import ClockIcon from '@/components/icons/ClockIcon'
 import OpenSourceIcon from '@/components/icons/OpenSourceIcon'
 import PrivacyIcon from '@/components/icons/PrivacyIcon'
 import ShieldLockIcon from '@/components/icons/ShieldLockIcon'
-import VideoIcon from '@/components/icons/VideoIcon'
 
 import { FeatureCard } from './FeatureCard'
 
@@ -40,20 +38,6 @@ export function FeatureCards() {
       hoverColor: '#059669',
     },
     {
-      title: 'Video',
-      description: 'Real-time video chat coming soon.',
-      icon: <VideoIcon className="size-6 stroke-inherit" />,
-      label: 'Coming Soon',
-      hoverColor: '#EA580C',
-    },
-    {
-      title: 'AI Chat',
-      description: 'AI-powered conversations in development.',
-      icon: <AIIcon className="size-6" />,
-      label: 'Coming Soon',
-      hoverColor: '#2563EB',
-    },
-    {
       title: 'Lightning Fast',
       description: 'Optimized for smooth performance.',
       icon: <BoltIcon className="size-6 stroke-inherit" />,
@@ -73,7 +57,7 @@ export function FeatureCards() {
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="mx-auto my-32 grid max-w-7xl grid-cols-1 px-6 lg:grid-cols-4"
+      className="mx-auto my-32 grid max-w-7xl grid-cols-1 px-6 lg:grid-cols-3"
     >
       {features.map((feature, index) => (
         <FeatureCard key={feature.title} {...feature} index={index} />

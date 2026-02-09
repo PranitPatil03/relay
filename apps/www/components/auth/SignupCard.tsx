@@ -54,61 +54,67 @@ const SignupCard = () => {
   })
 
   return (
-    <div className="flex aspect-square w-full max-w-[400px] flex-col justify-between rounded-2xl border bg-white p-8 shadow-2xl shadow-cyan-500/20">
+    <div className="w-full max-w-[400px]">
       <AuthHeader
-        title="Create an account"
+        title="Create an account on Relay"
         description="Please enter your details to sign up."
+        dark
       />
-      <div className="mt-5 flex grow flex-col justify-center space-y-4">
-        <AuthProviderButtons />
+
+      <div className="mt-8 space-y-6">
+        <AuthProviderButtons dark />
         <div className="relative flex items-center">
-          <div className="grow border-t border-gray-200"></div>
-          <span className="shrink rounded-full border p-1 text-[9px] text-gray-400">
+          <div className="grow border-t border-white/10"></div>
+          <span className="shrink px-3 text-xs text-neutral-500">
             OR
           </span>
-          <div className="grow border-t border-gray-200"></div>
+          <div className="grow border-t border-white/10"></div>
         </div>
 
         <form onSubmit={onSubmit} className="space-y-4">
           <div className="space-y-4">
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               <Input
                 type="text"
                 placeholder="First name"
-                className="w-1/2 rounded-md px-4 py-2"
+                className="w-1/2 rounded-lg border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-neutral-500"
                 {...form.register('firstName')}
                 error={form.formState.errors.firstName?.message}
                 required
+                dark
               />
               <Input
                 type="text"
                 placeholder="Last name"
-                className="w-1/2 rounded-md px-4 py-2"
+                className="w-1/2 rounded-lg border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-neutral-500"
                 {...form.register('lastName')}
                 error={form.formState.errors.lastName?.message}
+                dark
               />
             </div>
             <Input
               type="email"
               placeholder="Email address"
-              className="w-full rounded-md px-4 py-2"
+              className="w-full rounded-lg border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-neutral-500"
               {...form.register('email')}
               error={form.formState.errors.email?.message}
               required
+              dark
             />
             <Input
               type="password"
               placeholder="Create password"
-              className="w-full rounded-md px-4 py-2"
+              className="w-full rounded-lg border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-neutral-500"
               {...form.register('password')}
               error={form.formState.errors.password?.message}
               required
+              dark
             />
           </div>
 
           <Button
             type="submit"
-            className="w-full"
+            className="w-full rounded-lg bg-white py-3 font-semibold text-black transition-all hover:bg-neutral-200"
             disabled={isAuthenticating}
             isLoading={isExecuting}
           >
@@ -117,11 +123,11 @@ const SignupCard = () => {
         </form>
       </div>
 
-      <p className="mt-6 text-center text-sm text-gray-500">
+      <p className="mt-8 text-center text-sm text-neutral-500">
         Already have an account?{' '}
         <Link
           href="/login"
-          className="transition-ease font-medium underline underline-offset-2 hover:text-black"
+          className="font-medium text-white underline underline-offset-2 transition-colors hover:text-neutral-300"
         >
           Sign in
         </Link>

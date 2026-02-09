@@ -9,7 +9,7 @@ import { toast } from 'sonner'
 import { GoogleAuthAction } from '@/lib/actions/authActions'
 import { useAuthStore } from '@/lib/store/auth-store'
 
-export function GoogleAuthButton() {
+export function GoogleAuthButton({ dark }: { dark?: boolean }) {
   const { isAuthenticating, setIsAuthenticating } = useAuthStore()
   const router = useRouter()
 
@@ -68,7 +68,8 @@ export function GoogleAuthButton() {
   return (
     <Button
       variant="outline"
-      className="w-full"
+      className={`w-full gap-2 ${dark ? 'border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white' : 'border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white'}`}
+
       onClick={handleGoogleLogin}
       disabled={isAuthenticating}
       aria-label="Sign in with Google"
@@ -97,6 +98,8 @@ export function GoogleAuthButton() {
           fill="#EA4335"
         />
       </svg>
+      Google
     </Button>
+
   )
 }

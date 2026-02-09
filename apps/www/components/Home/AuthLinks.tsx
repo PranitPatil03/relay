@@ -18,25 +18,13 @@ export const AuthLinks = ({ isScrolled }: { isScrolled: boolean }) => {
           </Link>
         ) : (
           <>
-            {!isScrolled && (
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{
-                  duration: 0.6,
-                  ease: 'easeInOut',
-                }}
-              >
-                <Link href="/login">
-                  <Button className="rounded-lg border border-neutral-200 bg-white p-1.5 px-4 text-black/80 shadow-none transition-all duration-300 ease-in-out hover:bg-neutral-50">
-                    Log in
-                  </Button>
-                </Link>
-              </motion.div>
-            )}
+            <Link href="/login">
+              <Button className="rounded-lg border border-white/20 bg-transparent p-1.5 px-4 text-white/80 shadow-none transition-all duration-300 ease-in-out hover:bg-white/10">
+                Log in
+              </Button>
+            </Link>
             <Link href="/register">
-              <Button className={`duration-600 ease transition-all`}>
+              <Button className="duration-600 ease rounded-lg bg-white p-1.5 px-4 text-black transition-all hover:bg-neutral-100">
                 Sign up
               </Button>
             </Link>
@@ -46,3 +34,4 @@ export const AuthLinks = ({ isScrolled }: { isScrolled: boolean }) => {
     </motion.div>
   )
 }
+

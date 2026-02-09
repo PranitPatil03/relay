@@ -1,48 +1,29 @@
-import type { Metadata } from 'next'
+'use client'
 
-import BentoSection from '@/components/Home/BentoSection'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+
 import { CurrentLimits } from '@/components/Home/CurrentLimits'
 import { FeatureCards } from '@/components/Home/Features/FeatureCards'
 import { Hero } from '@/components/Home/Hero'
+import { useUser } from '@/hooks/useSession'
 
-export const metadata: Metadata = {
-  title: 'Echo - Real-time Chat',
-  description:
-    'Create instant chat rooms for quick collaboration and easy sharing. No signup needed - just seamless communication on demand.',
-  keywords: [
-    'chat',
-    'real-time',
-    'communication',
-    'instant messaging',
-    'collaboration',
-    'echo',
-  ],
-  openGraph: {
-    title: 'Echo - Real-time Chat',
-    description:
-      'Create instant chat rooms for quick collaboration and easy sharing. No signup needed - just seamless communication on demand.',
-    images: ['/images/echo.png'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Echo - Real-time Chat',
-    description:
-      'Create instant chat rooms for quick collaboration and easy sharing. No signup needed - just seamless communication on demand.',
-    images: ['/images/echo.png'],
-  },
-}
+export default function Page() {
+  const router = useRouter()
+  const { data } = useUser()
 
-const Page = () => {
+  useEffect(() => {
+    if (data?.user) {
+      router.replace('/dashboard')
+    }
+  }, [data, router])
+
   return (
-    <div className="bg-white">
-      <div className="container px-2 md:px-4 lg:px-8 xl:px-12">
-        <Hero />
-        <BentoSection />
-        <FeatureCards />
-        <CurrentLimits />
-      </div>
-    </div>
+    <>
+      <Hero />
+      <FeatureCards />
+      <CurrentLimits />
+    </>
   )
 }
 
-export default Page

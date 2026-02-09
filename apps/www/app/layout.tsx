@@ -11,44 +11,45 @@ import { ReactQueryProvider } from '@/providers/ReactQueryProvider'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Echo - Real-time Chat',
-    template: '%s | Echo',
+    default: 'Relay - Instant Communication',
+    template: '%s | Relay',
   },
   description:
-    'Create instant chat rooms for quick collaboration and easy sharing. No signup needed - just seamless communication on demand.',
-  keywords: ['chat', 'real-time', 'communication', 'echo', 'chat rooms'],
+    'Pass messages instantly. Create private rooms, invite your team, and start collaborating in seconds. No barriers, just connection.',
+  keywords: ['chat', 'real-time', 'communication', 'relay', 'instant messaging', 'team chat'],
   authors: [
     {
       name: 'Rohit Singh Rawat',
     },
   ],
-  creator: 'Echo',
+  creator: 'Relay',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://echo-chat.com',
-    title: 'Echo - Real-time Chat',
+    url: 'https://relay-chat.com',
+    title: 'Relay - Instant Communication',
     description:
-      'Create instant chat rooms for quick collaboration and easy sharing. No signup needed - just seamless communication on demand.',
-    siteName: 'Echo',
+      'Pass messages instantly. Create private rooms, invite your team, and start collaborating in seconds. No barriers, just connection.',
+    siteName: 'Relay',
     images: [
       {
-        url: '/images/echo.png',
+        url: '/images/relay.png',
         width: 800,
         height: 600,
-        alt: 'Echo Logo',
+        alt: 'Relay Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Echo - Real-time Chat',
+    title: 'Relay - Instant Communication',
     description:
-      'Create instant chat rooms for quick collaboration and easy sharing. No signup needed - just seamless communication on demand.',
+      'Pass messages instantly. Create private rooms, invite your team, and start collaborating in seconds. No barriers, just connection.',
     creator: '@Spacing_Whale',
-    images: ['/images/echo.png'],
+    images: ['/images/relay.png'],
   },
 }
+
 
 export default function RootLayout({
   children,

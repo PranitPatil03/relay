@@ -10,12 +10,13 @@ const EchoLogo = () => {
   return (
     <Link
       href={'/'}
-      className="z-[60] flex items-center gap-2"
+      className="z-[60] flex items-center gap-2 text-white"
       onMouseEnter={() => controls.start('animate')}
       onMouseLeave={() => controls.start('normal')}
       aria-label="Echo Home"
     >
       <Echo className="h-5 w-16" aria-hidden="true" />{' '}
+
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -94,3 +95,4 @@ const EchoLogo = () => {
   )
 }
 export default EchoLogo
+
