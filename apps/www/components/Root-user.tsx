@@ -17,11 +17,9 @@ import {
   SidebarMenuButton,
   useSidebar,
 } from '@echo/ui/components/ui/sidebar.tsx'
-import { Sparkles } from 'lucide-react'
 
 import { useUser } from '@/hooks/useSession'
 
-import Downitem from './Downitem'
 import { UserIcon } from './icons/animated/user'
 import FilledUser from './icons/FilledUser'
 import AccountDialog from './shared/AccountDialog'
@@ -81,16 +79,6 @@ export function NavUser() {
             </div>
           </div>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          {!data?.user?.subscription?.isPro && (
-            <Downitem
-              icon={<Sparkles />}
-              title="Upgrade to Pro"
-              href="/plans"
-            />
-          )}
-        </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <div>

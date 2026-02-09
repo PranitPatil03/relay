@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String            @id @default(cuid())
+  name            String
+  email           String            @unique
+  password        String?
+  image           String?
+  subscription    Subscription?
+  subscriptionId  String?           @unique
+  rooms           Room[]            @relation("RoomCreator")
+  roomsCount      Int               @default(0)
+  savedRoomsCount Int               @default(0)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  RoomParticipant RoomParticipant[]
+  provider        AuthProvider      @default(EMAIL)
+  purchases       Purchase[]
+}
+
+enum AuthProvider {
+  EMAIL
+  GOOGLE
+  GITHUB
+}
+
+model Subscription {
+  id        String     @id @default(cuid())
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String     @unique
+  plan      Plan       @relation(fields: [planId], references: [id], onDelete: Cascade)
+  planId    String
+  isPro     Boolean    @default(false)
+  startDate DateTime   @default(now())
+  endDate   DateTime?
+  isMonthly Boolean    @default(true)
+  autoRenew Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  purchases Purchase[]
+}
+
+model Plan {
+  id            String         @id @default(cuid())
+  name          String
+  maxUsers      Int            @default(100)
+  maxTimeLimit  Int            @default(60)
+  maxRooms      Int
+  maxSavedRooms Int
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
+  price         Int            @default(10)
+}
+
+model Purchase {
+  id                String        @id @default(cuid())
+  razorpayOrderId   String        @unique
+  razorpayPaymentId String?       @unique
+  razorpaySignature String?       @unique
+  amount            Int
+  currency          String        @default("INR")
+  status            String        @default("created")
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            String
+  planId            String
+  subscription      Subscription? @relation(fields: [subscriptionId], references: [id])
+  subscriptionId    String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model Room {
+  id           String            @id @default(cuid())
+  name         String
+  isTemporary  Boolean           @default(true)
+  maxTimeLimit Int
+  maxUsers     Int
+  createdById  String
+  createdBy    User              @relation("RoomCreator", fields: [createdById], references: [id], onDelete: Cascade)
+  participants RoomParticipant[]
+  messages     Message[]         @relation("RoomMessages")
+  createdAt    DateTime          @default(now())
+  closedAt     DateTime?
+  updatedAt    DateTime          @updatedAt
+  reactions    Reaction[]
+
+  @@index([createdById, createdAt])
+}
+
+model RoomParticipant {
+  id            String     @id @default(cuid())
+  roomId        String
+  userId        String?
+  user          User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  room          Room       @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  tempUsername  String?
+  tempUserId    String?
+  tempUserImage String?
+  joinedAt      DateTime   @default(now())
+  leftAt        DateTime?
+  Message       Message[]
+  Reaction      Reaction[]
+}
+
+model Message {
+  id       String          @id @default(cuid())
+  content  String
+  image    String?
+  sentAt   DateTime        @default(now())
+  roomId   String
+  room     Room            @relation("RoomMessages", fields: [roomId], references: [id], onDelete: Cascade)
+  sender   RoomParticipant @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  senderId String
+  reaction Reaction[]      @relation("MessageReactions")
+}
+
+model Reaction {
+  emoji String
+
+  id        String          @id @default(cuid())
+  sentAt    DateTime        @default(now())
+  messageId String
+  message   Message         @relation("MessageReactions", fields: [messageId], references: [id], onDelete: Cascade)
+  sender    RoomParticipant @relation(fields: [senderId], references: [id])
+  senderId  String
+  updatedAt DateTime        @updatedAt
+  Room      Room?           @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  roomId    String?
+
+  @@unique([emoji, messageId, senderId])
+}
+
+model EmailVerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model PasswordResetToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}

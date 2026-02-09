@@ -13,7 +13,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@echo/ui/components/ui/dropdown-menu.tsx'
-import { Sparkles } from 'lucide-react'
 
 import Downitem from '../Downitem'
 import { UserIcon } from '../icons/animated/user'
@@ -75,13 +74,6 @@ export function UserButton({
           </>
         )}
         <DropdownMenuGroup>
-          {user && !user.isPro && (
-            <Downitem
-              icon={<Sparkles />}
-              title="Upgrade to Pro"
-              href="/plans"
-            />
-          )}
           <Downitem
             icon={<EchoRoom className="stroke-2" />}
             title="Join a room"

@@ -1,5 +1,10 @@
 import NumberFlow from '@number-flow/react'
-import Image from 'next/image'
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@echo/ui/components/ui/avatar.tsx'
+import { User } from 'lucide-react'
 
 import { useIdentityStore } from '@/lib/store/useIdentityStore'
 import { UserIdentity } from '@/types'
@@ -47,13 +52,18 @@ export const ParticipantsSidebar = ({
                 } p-1 transition-colors duration-300 ease-in-out sm:p-1.5 lg:p-2`}
               >
                 <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3">
-                  <Image
-                    src={user.avatar}
-                    alt={user.username}
-                    className="size-6 rounded-full object-cover sm:size-7 lg:size-10"
-                    width={40}
-                    height={40}
-                  />
+                  <Avatar className="size-6 sm:size-7 lg:size-10">
+                    {user.avatar ? (
+                      <AvatarImage
+                        src={user.avatar}
+                        alt={user.username}
+                        className="object-cover"
+                      />
+                    ) : null}
+                    <AvatarFallback className="bg-neutral-300">
+                      <User className="size-3 sm:size-4 lg:size-5" />
+                    </AvatarFallback>
+                  </Avatar>
                   <div className="flex flex-col">
                     <span className="text-2xs truncate font-medium sm:text-xs lg:text-sm">
                       {user.userId === userId

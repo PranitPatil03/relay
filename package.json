@@ -4,6 +4,9 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "dev:www": "turbo dev --filter=www",
+    "dev:server": "turbo dev --filter=@echo/server",
+    "dev:ws": "turbo dev --filter=ws",
     "lint": "turbo lint",
     "prepare": "husky install",
     "lint:fix": "eslint . --fix",
@@ -11,7 +14,13 @@
     "type-check": "tsc --noEmit",
     "test": "pnpm test",
     "start": "turbo start",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "db:generate": "pnpm --filter @echo/db db:generate",
+    "db:push": "pnpm --filter @echo/db db:push",
+    "db:migrate": "pnpm --filter @echo/db db:migrate",
+    "db:migrate:deploy": "pnpm --filter @echo/db db:migrate:deploy",
+    "db:studio": "pnpm --filter @echo/db db:studio",
+    "db:reset": "pnpm --filter @echo/db db:reset"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",

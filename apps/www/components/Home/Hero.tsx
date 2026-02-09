@@ -7,8 +7,6 @@ import Link from 'next/link'
 import { FlaskIcon } from '../icons/animated/Flask'
 import { Button } from '../shared/Button'
 
-import DemoChatAnimated from './DemoChatAnimated'
-
 export const Hero = () => {
   return (
     <section
@@ -130,9 +128,6 @@ export const Hero = () => {
           <div className="bg-gradient-radial absolute left-1/2 top-1/4 size-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full from-blue-50 via-transparent to-transparent opacity-20 blur-3xl sm:size-[1000px]" />
           <div className="bg-gradient-radial absolute bottom-0 right-1/2 size-[400px] translate-x-1/2 translate-y-1/2 rounded-full from-blue-50 via-transparent to-transparent opacity-20 blur-3xl sm:size-[800px]" />
         </div>
-      </div>
-      <div className="flex-center w-full">
-        <DemoChatAnimated />
       </div>
     </section>
   )

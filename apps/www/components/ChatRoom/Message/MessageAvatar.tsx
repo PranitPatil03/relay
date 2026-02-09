@@ -3,7 +3,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from '@echo/ui/components/ui/avatar.tsx'
-import { LoadingSpinner } from '@echo/ui/icons/spinner.tsx'
+import { User } from 'lucide-react'
 
 type MessageAvatarProps = {
   avatar: string
@@ -22,9 +22,11 @@ export const MessageAvatar = ({
 
   return (
     <Avatar className="size-8">
-      <AvatarImage src={avatar} alt={`${userName}'s avatar`} />
-      <AvatarFallback>
-        <LoadingSpinner className="size-4 md:size-5" />
+      {avatar ? (
+        <AvatarImage src={avatar} alt={`${userName}'s avatar`} />
+      ) : null}
+      <AvatarFallback className="bg-neutral-200">
+        <User className="size-4 md:size-5" />
       </AvatarFallback>
     </Avatar>
   )

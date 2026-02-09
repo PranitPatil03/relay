@@ -72,10 +72,13 @@ pnpm install
 # Frontend: Copy .env.example to .env and update values as needed
 # Backend: Copy apps/server/.env.example to apps/server/.env and update values as needed
 
-# 4. Run database migrations
-npx prisma migrate dev
+# 4. Generate Prisma client
+pnpm db:generate
 
-# 5. Start development servers
+# 5. Run database migrations
+pnpm db:migrate
+
+# 6. Start development servers
 pnpm dev
 ```
 

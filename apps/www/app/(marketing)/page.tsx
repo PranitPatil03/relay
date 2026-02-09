@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import BentoSection from '@/components/Home/BentoSection'
-import ContactUs from '@/components/Home/ContactUs'
+import { CurrentLimits } from '@/components/Home/CurrentLimits'
 import { FeatureCards } from '@/components/Home/Features/FeatureCards'
 import { Hero } from '@/components/Home/Hero'
 
@@ -39,7 +39,7 @@ const Page = () => {
         <Hero />
         <BentoSection />
         <FeatureCards />
-        <ContactUs />
+        <CurrentLimits />
       </div>
     </div>
   )

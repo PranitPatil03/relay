@@ -4,7 +4,6 @@ import React from 'react'
 
 import { PricingPlan } from '@/types'
 
-import { Badge } from './Badge'
 import { Feature } from './Feature'
 import { IconWrapper } from './IconWrapper'
 import { PricingCardButton } from './PricingCardButton'
@@ -14,21 +13,12 @@ export function PricingCard({
   icon,
   description,
   price,
-  badge,
   features,
 }: PricingPlan) {
   return (
-    <Card
-      className={`relative w-[350px] rounded-3xl border-2 border-gray-200 p-5 ${
-        name.toLowerCase() === 'pro'
-          ? 'bg-gradient-to-b from-[#e6f1fc] via-[#FDEBEA] to-yellow-50'
-          : 'bg-white'
-      }`}
-    >
+    <Card className="relative w-[350px] rounded-3xl border-2 border-gray-200 bg-white p-5">
       <div className="mb-5 flex items-center justify-between">
         <IconWrapper icon={icon} size="md" />
-
-        {badge && <Badge>{badge}</Badge>}
       </div>
 
       <div className="mb-6">
@@ -48,7 +38,7 @@ export function PricingCard({
       </div>
       <Separator />
 
-      <PricingCardButton name={name} />
+      <PricingCardButton />
     </Card>
   )
 }
