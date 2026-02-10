@@ -1,7 +1,7 @@
 'use client'
 
-import GridPattern from '@echo/ui/components/ui/GridPattern.tsx'
-import { cn } from '@echo/utils/src'
+import GridPattern from '@relay/ui/components/ui/GridPattern.tsx'
+import { cn } from '@relay/utils/src'
 import { Ellipsis, ShieldIcon } from 'lucide-react'
 
 import BlurFadeIn from '../ui/BlurFadeIn'

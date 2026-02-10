@@ -1,56 +1,14 @@
 import { Request, Response } from 'express'
-import client from '@echo/db/src'
-import { createRoomSchema } from '@echo/lib'
+import client from '@relay/db/src'
+import { createRoomSchema } from '@relay/lib'
 import { RoomWithParticipants, UserWithRooms } from '../types'
 import { s3Client } from '../utils/S3Client'
 import getKeyFromUrl from '../utils/getKeyFromUrl'
 import { DeleteObjectCommand } from '@aws-sdk/client-s3'
 
-const validateSubscriptionLimits = (
-  user: {
-    subscription?: {
-      plan: {
-        maxTimeLimit: number
-        maxUsers: number
-        maxRooms: number
-        maxSavedRooms: number
-      }
-    } | null
-    roomsCount: number
-    savedRoomsCount: number
-  },
-  maxTimeLimit: number,
-  maxUsers: number,
-  isTemporary: boolean
-) => {
-  if (!user) {
-    return { error: 'User not found', status: 404 }
-  }
-
-  if (!user.subscription || !user.subscription.plan) {
-    return { error: 'No active subscription', status: 403 }
-  }
-
-  if (maxTimeLimit > user.subscription.plan.maxTimeLimit) {
-    return { error: 'Time limit exceeds plan maximum', status: 403 }
-  }
-
-  if (maxUsers > user.subscription.plan.maxUsers) {
-    return { error: 'User limit exceeds plan maximum', status: 403 }
-  }
-
-  if (isTemporary) {
-    if (user.roomsCount >= user.subscription.plan.maxRooms) {
-      return { error: 'Room limit reached for your plan', status: 403 }
-    }
-  } else {
-    if (user.savedRoomsCount >= user.subscription.plan.maxSavedRooms) {
-      return { error: 'Saved room limit reached for your plan', status: 403 }
-    }
-  }
-
-  return null
-}
+const DAILY_ROOM_LIMIT = 10
+const MAX_ROOM_DURATION = 30 // minutes
+const MAX_USERS_PER_ROOM = 50
 
 export const createRoom = async (
   req: Request,
@@ -65,44 +23,58 @@ export const createRoom = async (
 
     const { name, isTemporary, maxTimeLimit, maxUsers } = req.body
 
+    // Enforce max duration
+    if (maxTimeLimit > MAX_ROOM_DURATION) {
+      res
+        .status(403)
+        .json({ message: `Room duration cannot exceed ${MAX_ROOM_DURATION} minutes` })
+      return
+    }
+
+    // Enforce max users
+    if (maxUsers > MAX_USERS_PER_ROOM) {
+      res
+        .status(403)
+        .json({ message: `Room cannot have more than ${MAX_USERS_PER_ROOM} participants` })
+      return
+    }
+
     const user = await client.user.findUnique({
       where: {
         id: req.user?.userId,
       },
-      include: {
-        subscription: {
-          include: {
-            plan: true,
-          },
-        },
-      },
     })
 
     if (!user) {
-      res.status(404).json({ message: 'user not found' })
-
+      res.status(404).json({ message: 'User not found' })
       return
     }
-    const validationError = validateSubscriptionLimits(
-      user,
-      maxTimeLimit,
-      maxUsers,
-      isTemporary
-    )
 
-    if (validationError) {
+    // Check daily room limit
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    const roomsCreatedToday = await client.room.count({
+      where: {
+        createdById: user.id,
+        createdAt: { gte: today },
+      },
+    })
+
+    if (roomsCreatedToday >= DAILY_ROOM_LIMIT) {
       res
-        .status(validationError.status)
-        .json({ message: validationError.error })
+        .status(403)
+        .json({ message: 'Daily room limit reached. You can create up to 10 rooms per day.' })
       return
     }
+
     const room = await client.room.create({
       data: {
         name,
         isTemporary,
-        maxTimeLimit,
-        closedAt: new Date(Date.now() + maxTimeLimit * 60 * 1000),
-        maxUsers,
+        maxTimeLimit: Math.min(maxTimeLimit, MAX_ROOM_DURATION),
+        closedAt: new Date(Date.now() + Math.min(maxTimeLimit, MAX_ROOM_DURATION) * 60 * 1000),
+        maxUsers: Math.min(maxUsers, MAX_USERS_PER_ROOM),
         createdBy: {
           connect: {
             id: user.id,
@@ -116,9 +88,9 @@ export const createRoom = async (
       data: isTemporary
         ? { roomsCount: user.roomsCount + 1 }
         : {
-            roomsCount: user.roomsCount + 1,
-            savedRoomsCount: user.savedRoomsCount + 1,
-          },
+          roomsCount: user.roomsCount + 1,
+          savedRoomsCount: user.savedRoomsCount + 1,
+        },
     })
 
     res.status(201).json(room)

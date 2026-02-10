@@ -1,11 +1,11 @@
 'use client'
-import { Input } from '@echo/ui/components/ui/input.tsx'
-import { Label } from '@echo/ui/components/ui/label.tsx'
+import { Input } from '@relay/ui/components/ui/input.tsx'
+import { Label } from '@relay/ui/components/ui/label.tsx'
 import { Hash } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-import EchoRoom from '@/components/icons/EchoRoom'
+import RelayRoom from '@/components/icons/RelayRoom'
 import IdentityToggler from '@/components/Join-Room/IdentityToggler'
 import { useIdentityStore } from '@/lib/store/useIdentityStore'
 
@@ -34,7 +34,7 @@ export const JoinRoomForm = ({
       className="flex flex-col items-center max-md:my-3"
     >
       <div className="rounded-full border border-gray-200 bg-white p-2 shadow-sm">
-        <EchoRoom className="size-5" />
+        <RelayRoom className="size-5" />
       </div>
       <div className="mb-8 mt-4">
         <h1 className="text-2xl font-semibold">Join a room</h1>

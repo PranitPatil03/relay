@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
-const Echo = (props: SVGProps<SVGSVGElement>) => (
+const Relay = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={282}
@@ -32,4 +32,4 @@ const Echo = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 )
-export default Echo
+export default Relay

@@ -1,4 +1,4 @@
-import client from '@echo/db/src'
+import client from '@relay/db/src'
 import { Request, Response } from 'express'
 import { sendMail } from '../utils/sendMail'
 
@@ -51,7 +51,7 @@ export const activateFreePlan = async (
       },
     })
     await sendMail({
-      subject: 'Welcome to Echo Chat Free Trial',
+      subject: 'Welcome to Relay Chat Free Trial',
       email: user.email,
       message: '',
       tag: 'free_trial_active',

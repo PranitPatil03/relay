@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@echo/utils/src'
+import { cn } from '@relay/utils/src'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import React, { useRef } from 'react'
@@ -110,15 +110,15 @@ const messages = [
     isSent: false,
   },
   {
-    content: 'Yes! Have you checked out Echo?',
+    content: 'Yes! Have you checked out Relay?',
     isSent: true,
   },
   {
-    content: 'No, what is Echo?',
+    content: 'No, what is Relay?',
     isSent: false,
   },
   {
-    content: 'Echo is a chat application. We can talk about AOT there.',
+    content: 'Relay is a chat application. We can talk about AOT there.',
     isSent: true,
   },
   {

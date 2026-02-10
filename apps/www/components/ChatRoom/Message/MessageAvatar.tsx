@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@echo/ui/components/ui/avatar.tsx'
+} from '@relay/ui/components/ui/avatar.tsx'
 import { User } from 'lucide-react'
 
 type MessageAvatarProps = {

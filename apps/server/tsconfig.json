@@ -1,5 +1,5 @@
 {
-  "extends": "@echo/typescript-config/base.json",
+  "extends": "@relay/typescript-config/base.json",
   "compilerOptions": {
     "target": "es6",
     "lib": ["esnext"],
@@ -15,7 +15,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@echo/db/src": ["../../packages/db/src/index.ts"]
+      "@relay/db/src": ["../../packages/db/src/index.ts"]
     }
   },
   "include": ["src/**/*.ts"],

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
     'Read our Privacy Policy to understand how we collect, use, and protect your information.',
-  keywords: ['privacy policy', 'data protection', 'user privacy', 'echo'],
+  keywords: ['privacy policy', 'data protection', 'user privacy', 'relay'],
 }
 
 const PrivacyPolicy = () => {
@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
             1. Introduction
           </h2>
           <p className="text-sm text-gray-600 sm:text-base">
-            At Echo (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;),
+            At Relay (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;),
             we take your privacy seriously. This Privacy Policy explains how we
             collect, use, disclose, and safeguard your information when you use
             our real-time chat service and associated websites (collectively,
@@ -135,7 +135,7 @@ const PrivacyPolicy = () => {
             practices, please contact us at:
           </p>
           <a
-            href="mailto:echochat.com@gmail.com"
+            href="mailto:relaychat.com@gmail.com"
             className="ml-0 inline-flex items-center rounded-md bg-black px-3 py-1.5 text-xs font-medium text-white hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:ml-5 sm:px-4 sm:py-2 sm:text-sm"
           >
             Contact Us

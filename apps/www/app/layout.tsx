@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import './globals.css'
-import '@echo/ui/globals.css'
+import '@relay/ui/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
@@ -8,6 +8,7 @@ import type { Metadata } from 'next'
 import { Toaster } from 'sonner'
 
 import { ReactQueryProvider } from '@/providers/ReactQueryProvider'
+import { ThemeProvider } from '@/providers/ThemeProvider'
 
 export const metadata: Metadata = {
   title: {
@@ -57,8 +58,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('relay-ui-theme') || 'dark';
+                document.documentElement.classList.add(theme);
+              })();
+            `,
+          }}
+        />
         <link
           rel="icon"
           type="image/png"
@@ -74,14 +85,16 @@ export default function RootLayout({
         />
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="image/png" href="/images/echo.png" />
+        <link rel="image/png" href="/images/relay.png" />
       </head>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistSans.className} antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistSans.className} antialiased bg-background text-foreground`}
       >
-        <main>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
-        </main>
+        <ThemeProvider defaultTheme="dark" storageKey="relay-ui-theme">
+          <main>
+            <ReactQueryProvider>{children}</ReactQueryProvider>
+          </main>
+        </ThemeProvider>
         <Analytics />
         <Toaster />
       </body>

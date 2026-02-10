@@ -2,9 +2,9 @@ import { Request, Response } from 'express'
 import { z } from 'zod'
 import jwt from 'jsonwebtoken'
 import { Secret } from 'jsonwebtoken'
-import client from '@echo/db/src'
+import client from '@relay/db/src'
 import axios from 'axios'
-import { githubAuthSchema } from '@echo/lib'
+import { githubAuthSchema } from '@relay/lib'
 
 export const githubAuth = async (
   req: Request,

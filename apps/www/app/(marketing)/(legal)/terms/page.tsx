@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
     'Read our Terms of Service to understand the rules and regulations governing the use of our service.',
-  keywords: ['terms of service', 'user agreement', 'echo', 'chat'],
+  keywords: ['terms of service', 'user agreement', 'relay', 'chat'],
 }
 
 const TermsOfService = () => {
@@ -24,7 +24,7 @@ const TermsOfService = () => {
             1. Acceptance of Terms
           </h2>
           <p className="text-sm text-gray-600 sm:text-base">
-            By accessing or using Echo (&ldquo;Service&rdquo;), you agree to be
+            By accessing or using Relay (&ldquo;Service&rdquo;), you agree to be
             bound by these Terms of Service. If you do not agree to these terms,
             please do not use our Service.
           </p>
@@ -35,7 +35,7 @@ const TermsOfService = () => {
             2. Description of Service
           </h2>
           <p className="text-sm text-gray-600 sm:text-base">
-            Echo provides a real-time chat service and associated features. We
+            Relay provides a real-time chat service and associated features. We
             reserve the right to modify, suspend, or discontinue any part of the
             Service at any time.
           </p>
@@ -99,7 +99,7 @@ const TermsOfService = () => {
             contact us at:
           </p>
           <a
-            href="mailto:echochat.com@gmail.com"
+            href="mailto:relaychat.com@gmail.com"
             className="ml-0 inline-flex items-center rounded-md bg-black px-3 py-1.5 text-xs font-medium text-white hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:ml-5 sm:px-4 sm:py-2 sm:text-sm"
           >
             Contact Us

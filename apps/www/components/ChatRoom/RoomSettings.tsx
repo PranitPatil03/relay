@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@echo/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Check, Link } from 'lucide-react'
 import { usePathname } from 'next/navigation'

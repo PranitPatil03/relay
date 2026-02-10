@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 import { PutObjectCommand, DeleteObjectCommand } from '@aws-sdk/client-s3'
 import { s3Client } from '../utils/S3Client'
-import { uploadFileSchema, deleteFileSchema } from '@echo/lib'
+import { uploadFileSchema, deleteFileSchema } from '@relay/lib'
 
 export const uploadFile = async (
   req: Request,
@@ -36,6 +36,7 @@ export const uploadFile = async (
 
     const presignedUrl = await getSignedUrl(s3Client, command, {
       expiresIn: 300,
+      signableHeaders: new Set(['content-type']),
     })
     res.status(200).json({
       url: presignedUrl,

@@ -4,7 +4,7 @@ import { Mail } from 'lucide-react'
 import Link from 'next/link'
 
 import BlurFadeIn from '../ui/BlurFadeIn'
-import { EchoLoading } from '../ui/EchoLoading'
+import { RelayLoading } from '../ui/RelayLoading'
 import LinkButton from '../ui/LinkButton'
 
 import StripesBox from './StripesBox'
@@ -15,7 +15,7 @@ const ContactForm = () => {
       <div className="flex flex-col items-center space-y-4 p-4 sm:space-y-5 sm:p-6 md:p-8 lg:p-10 xl:px-20">
         <BlurFadeIn delay={0.1} blur={true}>
           <div className="z-10 rounded-xl border-2 bg-white p-2 shadow-md">
-            <EchoLoading className="size-4 sm:size-5" />
+            <RelayLoading className="size-4 sm:size-5" />
           </div>
         </BlurFadeIn>
 
@@ -28,7 +28,7 @@ const ContactForm = () => {
         <BlurFadeIn delay={0.3} blur={true}>
           <p className="text-center text-sm text-gray-600 sm:text-base">
             Have questions or feedback? I&apos;m here to help with any inquiries
-            about Echo.
+            about Relay.
           </p>
         </BlurFadeIn>
 
@@ -40,7 +40,7 @@ const ContactForm = () => {
 
             <div className="flex flex-col gap-2 sm:flex-row sm:gap-4">
               <LinkButton
-                href="mailto:echochat.com@gmail.com"
+                href="mailto:patilpranit3112@gmail.com"
                 className="bg-primary hover:bg-primary/90 focus:ring-primary/20 inline-flex w-full items-center justify-center rounded-lg px-3 py-2 text-xs font-medium text-white transition-colors focus:outline-none focus:ring-2 sm:w-auto sm:px-4 sm:text-sm"
                 variant={'primary'}
               >
@@ -71,7 +71,7 @@ const ContactForm = () => {
           <div className="mt-4 text-center text-xs text-gray-500 sm:mt-6 sm:text-sm">
             For technical issues, please visit our
             <Link
-              href="https://github.com/Rohit-Singh-Rawat/Echo-Chat/issues"
+              href="https://github.com/Rohit-Singh-Rawat/Relay-Chat/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary ml-1 hover:underline"

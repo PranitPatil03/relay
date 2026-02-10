@@ -1,5 +1,5 @@
 'use client'
-import { signupSchema, type SignupInput } from '@echo/lib'
+import { signupSchema, type SignupInput } from '@relay/lib'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
 import { useAction } from 'next-safe-action/hooks'

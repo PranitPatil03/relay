@@ -1,5 +1,5 @@
 {
-  "extends": "@echo/typescript-config/base.json",
+  "extends": "@relay/typescript-config/base.json",
   "compilerOptions": {
     "target": "es6",
     "lib": ["esnext"],

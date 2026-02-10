@@ -4,7 +4,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@echo/ui/components/ui/popover.tsx'
+} from '@relay/ui/components/ui/popover.tsx'
 import { useState } from 'react'
 
 import { EmojiPickerContent } from './EmojiPickerContent'

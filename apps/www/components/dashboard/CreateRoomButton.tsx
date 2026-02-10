@@ -1,7 +1,7 @@
 'use client'
-import { createRoomSchema } from '@echo/lib'
-import { Input as Input2 } from '@echo/ui/components/ui/input.tsx'
-import { Switch } from '@echo/ui/components/ui/switch.tsx'
+import { createRoomSchema } from '@relay/lib'
+import { Input as Input2 } from '@relay/ui/components/ui/input.tsx'
+import { Switch } from '@relay/ui/components/ui/switch.tsx'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ChevronDown, ChevronUp, Minus, Plus } from 'lucide-react'
 import { useRouter } from 'next/navigation'
@@ -24,13 +24,11 @@ function CreateRoomContent({
   form,
   status,
   limits,
-  savedRooms,
 }: {
   onSubmit: (data: CreateRoomInput) => Promise<void>
   form: ReturnType<typeof useForm<CreateRoomInput>>
   status: string
   limits: UserStats['limits']
-  savedRooms: UserStats['savedRooms']
 }) {
   return (
     <>
@@ -61,7 +59,7 @@ function CreateRoomContent({
           value={form.watch('maxUsers')}
           onChange={(value) => form.setValue('maxUsers', value)}
           minValue={1}
-          maxValue={limits?.maxUsers ?? 100}
+          maxValue={limits?.maxUsers ?? 50}
         >
           <div className="space-y-2">
             <Label className="text-foreground text-sm font-medium">
@@ -89,11 +87,14 @@ function CreateRoomContent({
           value={form.watch('maxTimeLimit')}
           onChange={(value) => form.setValue('maxTimeLimit', value)}
           minValue={1}
-          maxValue={limits?.maxTimeLimit ?? 200}
+          maxValue={limits?.maxTimeLimit ?? 30}
         >
           <div className="space-y-2">
             <Label className="text-foreground text-sm font-medium">
               Room Duration (minutes)
+              <span className="text-muted-foreground ml-1 text-xs font-normal">
+                max {limits?.maxTimeLimit ?? 30} min
+              </span>
             </Label>
             <Group className="border-input ring-offset-background data-[focus-within]:border-ring data-[focus-within]:ring-ring/30 relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border text-sm shadow-sm shadow-black/5 transition-shadow data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-2 data-[focus-within]:ring-offset-2">
               <Input className="bg-background text-foreground w-full grow px-3 py-2 text-center tabular-nums focus:outline-none" />
@@ -118,11 +119,6 @@ function CreateRoomContent({
         <div className="border-input has-[[data-state=checked]]:border-ring relative flex w-full items-start gap-2 rounded-lg border p-3 shadow-sm shadow-black/5 md:p-4">
           <Switch
             id="save-history"
-            disabled={
-              savedRooms !== undefined &&
-              limits.maxSavedRooms !== undefined &&
-              savedRooms >= limits.maxSavedRooms
-            }
             className="order-1 h-4 w-6 after:absolute after:inset-0 [&_span]:size-3 [&_span]:data-[state=checked]:translate-x-2 rtl:[&_span]:data-[state=checked]:-translate-x-2"
             aria-describedby="save-history-description"
             checked={!form.watch('isTemporary')}
@@ -160,13 +156,16 @@ function CreateRoomContent({
 }
 
 export default function CreateRoomButton({
-  totalRooms,
   limits,
   showStats = true,
-  savedRooms,
+  roomsCreatedToday: rawRoomsCreatedToday,
 }: UserStats & { showStats?: boolean }) {
   const [open, setOpen] = useState(false)
   const router = useRouter()
+
+  const roomsCreatedToday = rawRoomsCreatedToday ?? 0
+  const maxRoomsPerDay = limits?.maxRoomsPerDay ?? 10
+
   const form = useForm<CreateRoomInput>({
     resolver: zodResolver(createRoomSchema),
     defaultValues: {
@@ -195,28 +194,33 @@ export default function CreateRoomButton({
     await executeAsync({
       name: data.name,
       maxUsers: data.maxUsers,
-      maxTimeLimit: data.maxTimeLimit,
+      maxTimeLimit: Math.min(data.maxTimeLimit, limits?.maxTimeLimit ?? 30),
       isTemporary: data.isTemporary,
     })
   }
 
+  const isQuotaExhausted = roomsCreatedToday >= maxRoomsPerDay
+
   const trigger = (
-    <Button2
-      className="w-full md:w-auto"
-      disabled={
-        totalRooms && limits.maxRooms ? totalRooms >= limits.maxRooms : false
-      }
-      onClick={() => setOpen(true)}
-    >
-      Create room
-      {showStats &&
-        totalRooms !== undefined &&
-        limits.maxRooms !== undefined && (
+    <div className="flex w-full flex-col items-end gap-1 md:w-auto">
+      <Button2
+        className="w-full md:w-auto"
+        disabled={isQuotaExhausted}
+        onClick={() => setOpen(true)}
+      >
+        {isQuotaExhausted ? 'Limit reached' : 'Create room'}
+        {showStats && (
           <span className="border-primary-foreground/30 text-primary-foreground/60 -me-1 ms-1 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
-            {totalRooms}/{limits.maxRooms}
+            {roomsCreatedToday}/{maxRoomsPerDay}
           </span>
         )}
-    </Button2>
+      </Button2>
+      {isQuotaExhausted && (
+        <span className="text-[11px] text-red-500 font-medium">
+          Daily room quota exceeded — resets at midnight
+        </span>
+      )}
+    </div>
   )
 
   return (
@@ -228,7 +232,6 @@ export default function CreateRoomButton({
           form={form}
           status={status}
           limits={limits}
-          savedRooms={savedRooms}
         />
       </ResponsiveModal>
     </>

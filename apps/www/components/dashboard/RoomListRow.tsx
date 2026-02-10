@@ -1,13 +1,13 @@
 'use client'
 
-import { Button } from '@echo/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@echo/ui/components/ui/dropdown-menu.tsx'
-import { TableRow, TableCell } from '@echo/ui/components/ui/table.tsx'
+} from '@relay/ui/components/ui/dropdown-menu.tsx'
+import { TableRow, TableCell } from '@relay/ui/components/ui/table.tsx'
 import { Hash, MoreHorizontal } from 'lucide-react'
 
 import { useTimeLeft } from '@/hooks/useTimeLeft'

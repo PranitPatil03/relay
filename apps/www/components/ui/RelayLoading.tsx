@@ -1,14 +1,14 @@
 'use client'
 
-import { cn } from '@echo/utils/src'
+import { cn } from '@relay/utils/src'
 import { motion } from 'framer-motion'
 
-interface EchoLoadingProps {
+interface RelayLoadingProps {
   className?: string
   duration?: number
 }
 
-const EchoLoading = ({ className, duration = 2 }: EchoLoadingProps) => {
+const RelayLoading = ({ className, duration = 2 }: RelayLoadingProps) => {
   return (
     <div className={cn('flex items-center justify-center', className)}>
       <motion.svg
@@ -93,4 +93,4 @@ const EchoLoading = ({ className, duration = 2 }: EchoLoadingProps) => {
   )
 }
 
-export { EchoLoading }
+export { RelayLoading }

@@ -1,5 +1,5 @@
 import { Room, RoomInfo, WebSocketMessage } from './../types/index.d'
-import client from '@echo/db/src'
+import client from '@relay/db/src'
 import { User } from './User'
 
 export class RoomManager {

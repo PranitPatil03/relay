@@ -1,13 +1,13 @@
 'use client'
 
-import { Badge } from '@echo/ui/components/ui/badge.tsx'
-import { Button } from '@echo/ui/components/ui/button.tsx'
+import { Badge } from '@relay/ui/components/ui/badge.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@echo/ui/components/ui/dropdown-menu.tsx'
+} from '@relay/ui/components/ui/dropdown-menu.tsx'
 import {
   Table,
   TableBody,
@@ -15,7 +15,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@echo/ui/components/ui/table.tsx'
+} from '@relay/ui/components/ui/table.tsx'
 import {
   Eye,
   MessageCircle,

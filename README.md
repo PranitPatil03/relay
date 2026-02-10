@@ -1,6 +1,6 @@
-# Echo Chat
+# Relay Chat
 
-![echo](https://github.com/user-attachments/assets/47b1d863-4d1e-4ef7-a8bf-fb297f4cccaa)
+![relay](https://github.com/user-attachments/assets/47b1d863-4d1e-4ef7-a8bf-fb297f4cccaa)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org/)
@@ -8,10 +8,10 @@
 
  <!-- Replace with actual banner image -->
 
-![echo-ss](https://github.com/user-attachments/assets/e058afae-c418-4bbc-8b6a-fc45ea6a745b)
+![relay-ss](https://github.com/user-attachments/assets/e058afae-c418-4bbc-8b6a-fc45ea6a745b)
 
 **Real-time chat rooms** for instant collaboration with privacy-first design. No signups, no tracking – just seamless communication.  
-🌐 Live Demo: [https://echo.rsrcraft.me](https://echo.rsrcraft.me)
+🌐 Live Demo: [https://relay.rsrcraft.me](https://relay.rsrcraft.me)
 
 ---
 
@@ -61,8 +61,8 @@
 ```bash
 
 # 1. Clone repository
-git clone https://github.com/Rohit-Singh-Rawat/Echo-Chat.git
-cd Echo-Chat
+git clone https://github.com/Rohit-Singh-Rawat/Relay-Chat.git
+cd Relay-Chat
 
 # 2. Install dependencies
 pnpm install

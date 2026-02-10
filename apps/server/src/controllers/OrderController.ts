@@ -1,9 +1,9 @@
 import { Request, Response } from 'express'
-import client from '@echo/db/src'
+import client from '@relay/db/src'
 import razorpay from '../utils/Razorpay'
 import { sendMail } from '../utils/sendMail'
 import axios from 'axios'
-import { createOrderSchema, verifyPaymentSchema } from '@echo/lib'
+import { createOrderSchema, verifyPaymentSchema } from '@relay/lib'
 export const createOrder = async (
   req: Request,
   res: Response
@@ -162,7 +162,7 @@ export const verifyPayment = async (
 
     // Send confirmation email
     await sendMail({
-      subject: 'Payment Successful - Echo Chat Pro Activated',
+      subject: 'Payment Successful - Relay Chat Pro Activated',
       email: purchase.user.email,
       message: '',
       tag: 'subscription_active',

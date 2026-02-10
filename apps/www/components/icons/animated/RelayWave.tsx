@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from 'framer-motion'
 
-const EchoWave = () => {
+const RelayWave = () => {
   const controls = useAnimation()
   return (
     <svg
@@ -80,4 +80,4 @@ const EchoWave = () => {
   )
 }
 
-export default EchoWave
+export default RelayWave

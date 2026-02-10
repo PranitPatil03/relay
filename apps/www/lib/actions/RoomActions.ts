@@ -1,6 +1,6 @@
 'use server'
 
-import { createRoomSchema } from '@echo/lib'
+import { createRoomSchema } from '@relay/lib'
 import { revalidateTag } from 'next/cache'
 import { cookies } from 'next/headers'
 import { z } from 'zod'

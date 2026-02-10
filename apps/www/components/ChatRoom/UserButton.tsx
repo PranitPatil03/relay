@@ -4,7 +4,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@echo/ui/components/ui/avatar.tsx'
+} from '@relay/ui/components/ui/avatar.tsx'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,11 +12,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@echo/ui/components/ui/dropdown-menu.tsx'
+} from '@relay/ui/components/ui/dropdown-menu.tsx'
 
 import Downitem from '../Downitem'
 import { UserIcon } from '../icons/animated/user'
-import EchoRoom from '../icons/EchoRoom'
+import RelayRoom from '../icons/RelayRoom'
 import FilledUser from '../icons/FilledUser'
 import { UserIcon as User } from '../icons/UserIcon'
 import AccountDialog from '../shared/AccountDialog'
@@ -75,7 +75,7 @@ export function UserButton({
         )}
         <DropdownMenuGroup>
           <Downitem
-            icon={<EchoRoom className="stroke-2" />}
+            icon={<RelayRoom className="stroke-2" />}
             title="Join a room"
             href="/join-room"
           />

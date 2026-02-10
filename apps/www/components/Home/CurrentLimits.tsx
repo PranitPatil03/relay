@@ -1,28 +1,22 @@
 'use client'
 
-import { cn } from '@echo/utils/src'
+import { cn } from '@relay/utils/src'
 import { motion } from 'framer-motion'
-import { Clock, Layout, Save, Users } from 'lucide-react'
+import { Clock, Layout, Users } from 'lucide-react'
 import { useState } from 'react'
 
 const limits = [
   {
     icon: Users,
-    title: '5 Participants',
-    description: 'Up to 5 users per room',
+    title: '50 Participants',
+    description: 'Up to 50 users per room',
     hoverColor: '#10B981',
   },
   {
     icon: Layout,
-    title: '3 Rooms',
-    description: 'Create up to 3 active rooms',
+    title: '10 Rooms / Day',
+    description: 'Create up to 10 rooms every day',
     hoverColor: '#6366F1',
-  },
-  {
-    icon: Save,
-    title: '1 Saved Room',
-    description: 'Save 1 room for later access',
-    hoverColor: '#F59E0B',
   },
   {
     icon: Clock,
@@ -97,7 +91,7 @@ export function CurrentLimits() {
 
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3">
         {limits.map((limit, index) => (
           <LimitCard
             key={limit.title}

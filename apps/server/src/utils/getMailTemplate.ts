@@ -27,7 +27,7 @@ export const getTemplate = (options: EmailOptions): string => {
                   <tbody>
                     <tr>
                       <td>
-                        <img alt="Echo Chat" height="40" src="https://res.cloudinary.com/ytx/image/upload/v1736163180/echo_gmxbwc.png" style="display:block;outline:none;border:none;text-decoration:none;margin-left:auto;margin-right:auto;margin-top:0px;margin-bottom:0px" />
+                        <img alt="Relay Chat" height="40" src="https://res.cloudinary.com/ytx/image/upload/v1736163180/echo_gmxbwc.png" style="display:block;outline:none;border:none;text-decoration:none;margin-left:auto;margin-right:auto;margin-top:0px;margin-bottom:0px" />
                       </td>
                     </tr>
                   </tbody>
@@ -45,7 +45,7 @@ export const getTemplate = (options: EmailOptions): string => {
       Please confirm your email address
     </h1>
     <p style="font-size:0.875rem;line-height:1.5rem;margin:16px 0;margin-left:auto;margin-right:auto">
-      Enter this code on the Echo Chat verify page to complete your sign up:
+      Enter this code on the Relay Chat verify page to complete your sign up:
     </p>
     <table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-top:2rem;margin-bottom:2rem">
       <tbody>
@@ -141,7 +141,7 @@ export const getTemplate = (options: EmailOptions): string => {
 
   const freeTrialActiveTemplate = `
     <h1 style="margin-left:0px;margin-right:0px;margin-top:1.75rem;margin-bottom:1.75rem;padding:0px;text-align:center;font-size:1.25rem;line-height:1.75rem;font-weight:600;color:rgb(0,0,0)">
-      Welcome to Echo Chat!
+      Welcome to Relay Chat!
     </h1>
     <p style="font-size:0.875rem;line-height:1.5rem;margin:16px 0;margin-left:auto;margin-right:auto">
       Hi ${options.username}, your free trial is now active. You can create temporary chatrooms with features like:
@@ -170,7 +170,7 @@ export const getTemplate = (options: EmailOptions): string => {
     </p>
     <hr style="width:100%;border:none;border-top:1px solid #eaeaea;margin-left:0px;margin-right:0px;margin-top:1.5rem;margin-bottom:1.5rem;border-width:1px;border-color:rgb(229,231,235)">
     <p style="font-size:12px;line-height:1.5rem;margin:16px 0;color:rgb(107,114,128)">
-      Having trouble setting up a room? <a href="mailto:echochat.com@gmail.com" style="color:rgb(37,99,235);text-decoration:none">Contact us</a> for immediate assistance.
+      Having trouble setting up a room? <a href="mailto:patilpranit3112@gmail.com" style="color:rgb(37,99,235);text-decoration:none">Contact us</a> for immediate assistance.
     </p>
   `
 

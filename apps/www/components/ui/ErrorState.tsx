@@ -1,12 +1,12 @@
 'use client'
 
-import GridPattern from '@echo/ui/components/ui/GridPattern.tsx'
-import { cn } from '@echo/utils/src'
+import GridPattern from '@relay/ui/components/ui/GridPattern.tsx'
+import { cn } from '@relay/utils/src'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useMemo } from 'react'
 
-import EchoLogo from '../icons/animated/EchoLogo'
+import RelayLogo from '../icons/animated/RelayLogo'
 
 interface ErrorStateProps {
   title?: string
@@ -48,7 +48,7 @@ export const ErrorState = ({
         strokeDasharray="4 4"
         squares={randomSquares}
       />
-      <EchoLogo />
+      <RelayLogo />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}

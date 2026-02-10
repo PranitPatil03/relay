@@ -21,7 +21,7 @@ const BentoSection = () => {
             Everything you need for seamless chat
           </h2>
           <p className="mt-6 text-lg leading-8 text-black/60">
-            Powerful features that make Echo the perfect choice for temporary
+            Powerful features that make Relay the perfect choice for temporary
             conversations
           </p>
         </motion.div>

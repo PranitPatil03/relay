@@ -7,7 +7,7 @@ import {
   githubAuthSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
-} from '@echo/lib'
+} from '@relay/lib'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 

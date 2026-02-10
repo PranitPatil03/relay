@@ -1,5 +1,5 @@
 {
-  "name": "@echo/ui",
+  "name": "@relay/ui",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -13,9 +13,9 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@echo/eslint-config": "workspace:*",
-    "@echo/tailwind-config": "workspace:*",
-    "@echo/typescript-config": "workspace:*",
+    "@relay/eslint-config": "workspace:*",
+    "@relay/tailwind-config": "workspace:*",
+    "@relay/typescript-config": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
@@ -28,7 +28,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@echo/utils": "workspace:*",
+    "@relay/utils": "workspace:*",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",

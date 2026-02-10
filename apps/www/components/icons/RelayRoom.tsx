@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { SVGProps } from 'react'
-const EchoRoom = (props: SVGProps<SVGSVGElement>) => (
+const RelayRoom = (props: SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" {...props}>
     <path d="M61 31.6H48.47a1.5 1.5 0 0 1 0-3h8.7L32 5.08 6.83 28.6h8.7a1.5 1.5 0 1 1 0 3H3A1.5 1.5 0 0 1 2 29L30.74 2.15A1.49 1.49 0 0 1 32 1.5a1.56 1.56 0 0 1 1.2.56L62 29a1.5 1.5 0 0 1-1 2.6Z" />
     <path d="M53.1 62.5H10.9A1.5 1.5 0 0 1 9.4 61V30.1a1.5 1.5 0 0 1 1.5-1.5h4.63a1.5 1.5 0 1 1 0 3H12.4v27.9h39.2V31.6h-3.13a1.5 1.5 0 0 1 0-3h4.63a1.5 1.5 0 0 1 1.5 1.5V61a1.5 1.5 0 0 1-1.5 1.5Z" />
@@ -8,4 +8,4 @@ const EchoRoom = (props: SVGProps<SVGSVGElement>) => (
     <path d="M32 42.38a1.5 1.5 0 0 1-1.5-1.5V22.5a1.5 1.5 0 0 1 3 0v18.38a1.5 1.5 0 0 1-1.5 1.5Z" />
   </svg>
 )
-export default EchoRoom
+export default RelayRoom

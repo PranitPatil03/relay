@@ -1,11 +1,11 @@
 'use client'
 
-import { cn } from '@echo/utils/src'
+import { cn } from '@relay/utils/src'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 import React, { forwardRef, useRef } from 'react'
 
-import { EchoLoading } from '@/components/ui/EchoLoading'
+import { RelayLoading } from '@/components/ui/RelayLoading'
 
 import { AnimatedBeam } from '../../ui/AnimatedBeams'
 
@@ -65,7 +65,7 @@ export function RealTimeDemo() {
             <User />
           </Circle>
           <Circle ref={div4Ref} className="size-16">
-            <EchoLoading className="size-8" duration={5} />
+            <RelayLoading className="size-8" duration={5} />
           </Circle>
           <Circle ref={div6Ref} className="p-0.5">
             <Image

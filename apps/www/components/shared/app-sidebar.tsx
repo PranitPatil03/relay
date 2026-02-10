@@ -8,14 +8,14 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@echo/ui/components/ui/sidebar.tsx'
+} from '@relay/ui/components/ui/sidebar.tsx'
 
-import EchoLogo from '../icons/animated/EchoLogo'
+import RelayLogo from '../icons/animated/RelayLogo'
 import { History } from '../icons/animated/History'
 import { HomeIcon } from '../icons/animated/Home'
 import { NavUser } from '../Root-user'
 
-import PremiumBox from './PremiumBox'
+import { ProfileSection } from './ProfileSection'
 import SideBarItem from './SideBarItem'
 
 // Menu items.
@@ -34,13 +34,10 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset" className="bg-neutral-100">
+    <Sidebar variant="inset" className="bg-[#FBFBFA] border-neutral-200/50 shadow-sm">
       <SidebarContent className="ju flex flex-col">
         <SidebarHeader className="flex flex-row items-center justify-between max-md:p-4">
-          <EchoLogo />
-          <div className="max-md:hidden">
-            <NavUser />
-          </div>
+          <RelayLogo />
         </SidebarHeader>
         <SidebarGroup className="mt-10 flex-1">
           <SidebarGroupContent>
@@ -59,8 +56,8 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        <SidebarFooter>
-          <PremiumBox />
+        <SidebarFooter className="border-t border-neutral-200/50">
+          <ProfileSection />
         </SidebarFooter>
       </SidebarContent>
     </Sidebar>

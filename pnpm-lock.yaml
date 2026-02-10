@@ -41,10 +41,10 @@ importers:
       '@aws-sdk/s3-request-presigner':
         specifier: ^3.717.0
         version: 3.978.0
-      '@echo/db':
+      '@relay/db':
         specifier: workspace:*
         version: link:../../packages/db
-      '@echo/lib':
+      '@relay/lib':
         specifier: workspace:*
         version: link:../../packages/lib
       '@types/bcryptjs':
@@ -99,7 +99,7 @@ importers:
         specifier: ^3.23.8
         version: 3.25.76
     devDependencies:
-      '@echo/typescript-config':
+      '@relay/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/cors':
@@ -126,7 +126,7 @@ importers:
 
   apps/ws:
     dependencies:
-      '@echo/db':
+      '@relay/db':
         specifier: workspace:*
         version: link:../../packages/db
       bufferutil:
@@ -151,10 +151,10 @@ importers:
         specifier: ^8.18.0
         version: 8.19.0(bufferutil@4.1.0)(utf-8-validate@5.0.10)
     devDependencies:
-      '@echo/eslint-config':
+      '@relay/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@echo/typescript-config':
+      '@relay/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/jsonwebtoken':
@@ -171,22 +171,10 @@ importers:
         version: 8.57.1
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@20.19.30)(typescript@5.5.4)
+        version: 10.9.2(@types/node@20.19.30)(typescript@5.9.3)
 
   apps/www:
     dependencies:
-      '@echo/lib':
-        specifier: workspace:*
-        version: link:../../packages/lib
-      '@echo/tailwind-config':
-        specifier: workspace:*
-        version: link:../../packages/tailwind-config
-      '@echo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      '@echo/utils':
-        specifier: workspace:*
-        version: link:../../packages/utils
       '@emoji-mart/data':
         specifier: ^1.2.1
         version: 1.2.1
@@ -205,6 +193,18 @@ importers:
       '@react-oauth/google':
         specifier: ^0.12.1
         version: 0.12.2(react-dom@19.0.0-rc-66855b96-20241106)(react@19.0.0-rc-66855b96-20241106)
+      '@relay/lib':
+        specifier: workspace:*
+        version: link:../../packages/lib
+      '@relay/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      '@relay/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@relay/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@tanstack/react-query':
         specifier: ^5.62.11
         version: 5.90.20(react@19.0.0-rc-66855b96-20241106)
@@ -260,10 +260,10 @@ importers:
         specifier: ^5.0.1
         version: 5.0.10(@types/react@18.3.27)(react@19.0.0-rc-66855b96-20241106)
     devDependencies:
-      '@echo/eslint-config':
+      '@relay/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
-      '@echo/typescript-config':
+      '@relay/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/node':
@@ -364,7 +364,7 @@ importers:
         specifier: ^3.22.4
         version: 3.25.76
     devDependencies:
-      '@echo/typescript-config':
+      '@relay/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       typescript:
@@ -384,9 +384,6 @@ importers:
 
   packages/ui:
     dependencies:
-      '@echo/utils':
-        specifier: workspace:*
-        version: link:../utils
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.10.0(react-hook-form@7.71.1)
@@ -432,6 +429,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.1.3
         version: 1.2.8(@types/react-dom@18.3.7)(@types/react@18.3.27)(react-dom@19.0.0-rc-66855b96-20241106)(react@18.3.1)
+      '@relay/utils':
+        specifier: workspace:*
+        version: link:../utils
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.1
@@ -472,13 +472,13 @@ importers:
         specifier: ^3.23.8
         version: 3.25.76
     devDependencies:
-      '@echo/eslint-config':
+      '@relay/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@echo/tailwind-config':
+      '@relay/tailwind-config':
         specifier: workspace:*
         version: link:../tailwind-config
-      '@echo/typescript-config':
+      '@relay/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@turbo/gen':
@@ -514,7 +514,7 @@ importers:
 
   packages/utils:
     dependencies:
-      '@echo/typescript-config':
+      '@relay/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       clsx:
@@ -524,7 +524,7 @@ importers:
         specifier: ^2.5.4
         version: 2.6.0
     devDependencies:
-      '@echo/eslint-config':
+      '@relay/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
       eslint:
@@ -12127,6 +12127,37 @@ packages:
       diff: 4.0.4
       make-error: 1.3.6
       typescript: 5.5.4
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    dev: true
+
+  /ts-node@10.9.2(@types/node@20.19.30)(typescript@5.9.3):
+    resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.12
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.19.30
+      acorn: 8.15.0
+      acorn-walk: 8.3.4
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.4
+      make-error: 1.3.6
+      typescript: 5.9.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true

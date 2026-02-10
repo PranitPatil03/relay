@@ -1,8 +1,8 @@
-import { LoadingSpinner } from '@echo/ui/icons/spinner.tsx'
+import { LoadingSpinner } from '@relay/ui/icons/spinner.tsx'
 import { AudioLines } from 'lucide-react'
 
 import { UserButton } from '@/components/ChatRoom/UserButton'
-import EchoLogo from '@/components/icons/animated/EchoLogo'
+import RelayLogo from '@/components/icons/animated/RelayLogo'
 import { LogoutIcon } from '@/components/icons/LogoutIcon'
 import { Button } from '@/components/shared/Button'
 import { useUser } from '@/hooks/useSession'
@@ -24,7 +24,7 @@ export const RoomHeader = ({
   const DesktopHeader = () => (
     <div className="row-span-1 hidden w-full items-center justify-between px-7 md:flex">
       <div className="flex justify-between gap-10">
-        <EchoLogo />
+        <RelayLogo />
         {isLoading ? (
           <div className="flex items-center justify-center rounded-full border border-neutral-200 bg-neutral-300 p-1">
             <LoadingSpinner className="size-4 -translate-x-px text-neutral-200" />

@@ -1,4 +1,4 @@
-import { Button } from '@echo/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
 import Link from 'next/link'
 
 const PremiumBox = () => {
@@ -15,7 +15,7 @@ const PremiumBox = () => {
       </div>
       <Link href="/plans" className="block">
         <Button className="mt-1 w-full bg-neutral-900 text-xs font-medium transition-all duration-200 ease-in-out hover:bg-neutral-800 active:scale-[0.98]">
-          Get Echo Pro
+          Get Relay Pro
         </Button>
       </Link>
     </div>

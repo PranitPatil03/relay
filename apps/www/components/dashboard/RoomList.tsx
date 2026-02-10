@@ -6,7 +6,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
-} from '@echo/ui/components/ui/table.tsx'
+} from '@relay/ui/components/ui/table.tsx'
 
 import { RoomWithParticipants } from '@/types'
 

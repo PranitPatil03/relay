@@ -1,5 +1,5 @@
-import GridPattern from '@echo/ui/components/ui/GridPattern.tsx'
-import { cn } from '@echo/utils/src'
+import GridPattern from '@relay/ui/components/ui/GridPattern.tsx'
+import { cn } from '@relay/utils/src'
 
 import { Message } from '@/types'
 

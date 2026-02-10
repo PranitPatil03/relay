@@ -1,11 +1,11 @@
 'use client'
 
-import GridPattern from '@echo/ui/components/ui/GridPattern.tsx'
-import { cn } from '@echo/utils/src'
+import GridPattern from '@relay/ui/components/ui/GridPattern.tsx'
+import { cn } from '@relay/utils/src'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState, useMemo } from 'react'
 
-import { EchoLoading } from './EchoLoading'
+import { RelayLoading } from './RelayLoading'
 
 interface LoadingStateProps {
   fullScreen?: boolean
@@ -68,7 +68,7 @@ export const LoadingState = ({ fullScreen = false }: LoadingStateProps) => {
         animate={{ opacity: 1 }}
         className="flex flex-col items-center gap-8 rounded-2xl p-8"
       >
-        <EchoLoading className="scale-110" />
+        <RelayLoading className="scale-110" />
         <AnimatePresence mode="wait">
           <motion.div
             key={loadingMessage}

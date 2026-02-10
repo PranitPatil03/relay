@@ -5,7 +5,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@echo/ui/components/ui/tooltip.tsx'
+} from '@relay/ui/components/ui/tooltip.tsx'
 
 import Emoji from '../icons/animated/Emoji'
 

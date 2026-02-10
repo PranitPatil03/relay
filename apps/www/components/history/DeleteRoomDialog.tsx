@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@echo/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
 import {
   Dialog,
   DialogContent,
@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@echo/ui/components/ui/dialog.tsx'
+} from '@relay/ui/components/ui/dialog.tsx'
 import { AlertCircle, Trash2 } from 'lucide-react'
 import { revalidatePath } from 'next/cache'
 import { useAction } from 'next-safe-action/hooks'

@@ -6,8 +6,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '@echo/ui/components/ui/dialog.tsx'
-import { Input } from '@echo/ui/components/ui/input.tsx'
+} from '@relay/ui/components/ui/dialog.tsx'
+import { Input } from '@relay/ui/components/ui/input.tsx'
 import { useQueryClient } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { useAction } from 'next-safe-action/hooks'
@@ -66,36 +66,36 @@ export function DeleteAccountSection() {
         <></>
       </AccountCard>
       <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
-        <DialogContent className="mx-4 max-w-[95%] md:mx-auto md:max-w-[425px]">
+        <DialogContent className="mx-4 max-w-[95%] md:mx-auto md:max-w-[425px] bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800">
           <DialogHeader>
-            <DialogTitle className="text-xl font-semibold text-red-600">
+            <DialogTitle className="text-xl font-semibold text-red-600 dark:text-red-400">
               Delete Account
             </DialogTitle>
-            <p className="text-sm text-neutral-600">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
               This will permanently delete your account and all associated data.
               This action cannot be undone.
             </p>
           </DialogHeader>
           <div className="space-y-6 py-6">
-            <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
-              <p className="text-sm font-medium text-red-900">
+            <div className="rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50 p-4">
+              <p className="text-sm font-medium text-red-900 dark:text-red-300">
                 You will lose access to:
               </p>
-              <ul className="mt-2 list-inside list-disc text-sm text-red-700">
+              <ul className="mt-2 list-inside list-disc text-sm text-red-700 dark:text-red-400">
                 <li>All your chat history and saved conversations</li>
                 <li>Your account settings and preferences</li>
                 <li>Any active subscriptions</li>
               </ul>
             </div>
             <div className="space-y-2">
-              <p className="text-sm font-medium text-neutral-700">
+              <p className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 Please type &ldquo;delete my account&rdquo; to confirm:
               </p>
               <Input
                 value={confirmText}
                 onChange={(e) => setConfirmText(e.target.value)}
                 placeholder="Type 'delete my account' to confirm"
-                className="border-neutral-200 focus-visible:ring-red-500"
+                className="border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 focus-visible:ring-red-500"
               />
             </div>
           </div>
@@ -103,7 +103,7 @@ export function DeleteAccountSection() {
             <Button
               onClick={() => setShowConfirmDialog(false)}
               disabled={isLoading}
-              className="w-full hover:bg-neutral-100 md:w-auto"
+              className="w-full hover:bg-neutral-100 dark:hover:bg-neutral-800 md:w-auto"
             >
               Cancel
             </Button>
@@ -111,7 +111,7 @@ export function DeleteAccountSection() {
               onClick={() => handleDelete()}
               disabled={confirmText !== 'delete my account' || isLoading}
               isLoading={isLoading}
-              className="w-full bg-red-600 hover:bg-red-700 focus-visible:ring-red-500 md:w-auto"
+              className="w-full bg-red-600 hover:bg-red-700 dark:bg-red-600 dark:hover:bg-red-700 focus-visible:ring-red-500 md:w-auto"
             >
               Delete Account
             </Button>

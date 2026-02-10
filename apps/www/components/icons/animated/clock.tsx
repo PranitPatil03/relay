@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@echo/utils/src'
+import { cn } from '@relay/utils/src'
 import type { Transition, Variants } from 'framer-motion'
 import { motion, useAnimation } from 'framer-motion'
 

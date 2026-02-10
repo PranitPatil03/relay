@@ -1,5 +1,5 @@
 'use client'
-import { loginSchema, type LoginInput } from '@echo/lib'
+import { loginSchema, type LoginInput } from '@relay/lib'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'

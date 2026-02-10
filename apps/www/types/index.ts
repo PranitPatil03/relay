@@ -64,9 +64,9 @@ export type UserStats = {
   totalRooms: number
   savedRooms: number
   temporaryRooms: number
+  roomsCreatedToday: number
   limits: {
-    maxRooms: number
-    maxSavedRooms: number
+    maxRoomsPerDay: number
     maxTimeLimit: number
     maxUsers: number
   }

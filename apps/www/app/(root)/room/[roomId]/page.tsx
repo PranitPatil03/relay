@@ -4,7 +4,7 @@ import PageClient from './page-client'
 
 export const metadata = {
   title: 'Chat Room',
-  description: 'Real-time chat room powered by Echo',
+  description: 'Real-time chat room powered by Relay',
 }
 
 interface PageProps {

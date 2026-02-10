@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@echo/ui/components/ui/input.tsx'
+import { Input } from '@relay/ui/components/ui/input.tsx'
 import { useEffect, useState } from 'react'
 
 import DisplaySwitch from '@/components/dashboard/DisplayRadio'

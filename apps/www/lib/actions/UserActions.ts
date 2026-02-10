@@ -1,5 +1,5 @@
 'use server'
-import { updateProfileSchema } from '@echo/lib'
+import { updateProfileSchema } from '@relay/lib'
 import { revalidateTag } from 'next/cache'
 import { cookies } from 'next/headers'
 

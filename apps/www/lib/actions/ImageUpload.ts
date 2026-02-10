@@ -1,5 +1,5 @@
 'use server'
-import { deleteFileSchema, uploadFileSchema } from '@echo/lib'
+import { deleteFileSchema, uploadFileSchema } from '@relay/lib'
 import { cookies } from 'next/headers'
 
 import { actionClient } from './safe-actions'

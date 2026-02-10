@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@echo/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
 import { useState } from 'react'
 
 import { ResponsiveModal } from '../ui/responsive-modal'

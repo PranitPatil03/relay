@@ -1,5 +1,5 @@
-import { Button } from '@echo/ui/components/ui/button.tsx'
-import { Input } from '@echo/ui/components/ui/input.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
+import { Input } from '@relay/ui/components/ui/input.tsx'
 import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
 
@@ -19,7 +19,7 @@ export function UserIdSection({ userId }: UserIdSectionProps) {
     <AccountCard title="User ID" description="Your unique account identifier.">
       <div className="flex w-full gap-2 md:max-w-md">
         <Input
-          className="bg-neutral-50 font-mono text-sm"
+          className="bg-neutral-50 dark:bg-neutral-800 font-mono text-sm text-neutral-900 dark:text-neutral-100"
           type="text"
           value={userId}
           disabled

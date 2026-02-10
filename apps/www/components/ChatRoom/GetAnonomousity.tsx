@@ -7,7 +7,7 @@ import IdentityToggler from '@/components/Join-Room/IdentityToggler'
 import { Button } from '@/components/shared/Button'
 import { useIdentityStore } from '@/lib/store/useIdentityStore'
 
-import EchoLogo from '../icons/animated/EchoLogo'
+import RelayLogo from '../icons/animated/RelayLogo'
 
 export default function GetAnonomousity() {
   const { setAnonymous } = useIdentityStore()
@@ -20,7 +20,7 @@ export default function GetAnonomousity() {
   return (
     <div className="flex-center mx-auto h-screen w-screen flex-col bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] p-4 [background-size:16px_16px] sm:p-6 lg:p-10">
       <div className="">
-        <EchoLogo />
+        <RelayLogo />
       </div>
       <div className="transition-ease xs:max-w-[90%] m-auto w-full max-w-[95%] space-y-4 rounded-2xl border-2 border-neutral-300 bg-white p-4 shadow-xl hover:shadow-2xl sm:max-w-[450px] sm:space-y-6 sm:p-8 md:p-10">
         <div>

@@ -1,28 +1,30 @@
 import { Request, Response } from 'express'
-import client from '@echo/db/src'
-import { updateProfileSchema } from '@echo/lib'
+import client from '@relay/db/src'
+import { updateProfileSchema } from '@relay/lib'
+
+const DAILY_ROOM_LIMIT = 10
+const MAX_ROOM_DURATION = 30 // minutes
 
 export const getStats = async (req: Request, res: Response): Promise<void> => {
   try {
-    const stats = await client.user.findUnique({
-      where: { id: req.user!.userId },
-      select: {
-        subscription: {
-          select: {
-            plan: {
-              select: {
-                maxRooms: true,
-                maxSavedRooms: true,
-                maxTimeLimit: true,
-                maxUsers: true,
-              },
-            },
-          },
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    const [stats, roomsCreatedToday] = await Promise.all([
+      client.user.findUnique({
+        where: { id: req.user!.userId },
+        select: {
+          savedRoomsCount: true,
+          roomsCount: true,
         },
-        savedRoomsCount: true,
-        roomsCount: true,
-      },
-    })
+      }),
+      client.room.count({
+        where: {
+          createdById: req.user!.userId,
+          createdAt: { gte: today },
+        },
+      }),
+    ])
 
     if (!stats) {
       res.status(404).json({ message: 'User stats not found' })
@@ -33,11 +35,11 @@ export const getStats = async (req: Request, res: Response): Promise<void> => {
       totalRooms: stats.roomsCount,
       savedRooms: stats.savedRoomsCount,
       temporaryRooms: stats.roomsCount - stats.savedRoomsCount,
+      roomsCreatedToday,
       limits: {
-        maxRooms: stats.subscription?.plan?.maxRooms ?? 0,
-        maxSavedRooms: stats.subscription?.plan?.maxSavedRooms ?? 0,
-        maxTimeLimit: stats.subscription?.plan?.maxTimeLimit ?? 0,
-        maxUsers: stats.subscription?.plan?.maxUsers ?? 0,
+        maxRoomsPerDay: DAILY_ROOM_LIMIT,
+        maxTimeLimit: MAX_ROOM_DURATION,
+        maxUsers: 50,
       },
     })
   } catch (error) {

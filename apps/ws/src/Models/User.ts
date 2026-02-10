@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import { WebSocket } from 'ws'
-import client from '@echo/db/src'
+import client from '@relay/db/src'
 import { RoomManager } from './RoomManager'
 import { v4 as uuid } from 'uuid'
 import { WebSocketMessage } from '../types/index.d'

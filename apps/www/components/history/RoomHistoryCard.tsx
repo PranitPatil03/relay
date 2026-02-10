@@ -4,16 +4,16 @@ import {
   Avatar,
   AvatarImage,
   AvatarFallback,
-} from '@echo/ui/components/ui/avatar.tsx'
-import { Badge } from '@echo/ui/components/ui/badge.tsx'
-import { Button } from '@echo/ui/components/ui/button.tsx'
-import { Card, CardContent, CardFooter } from '@echo/ui/components/ui/card.tsx'
+} from '@relay/ui/components/ui/avatar.tsx'
+import { Badge } from '@relay/ui/components/ui/badge.tsx'
+import { Button } from '@relay/ui/components/ui/button.tsx'
+import { Card, CardContent, CardFooter } from '@relay/ui/components/ui/card.tsx'
 import {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
-} from '@echo/ui/components/ui/hover-card.tsx'
-import { Separator } from '@echo/ui/components/ui/separator.tsx'
+} from '@relay/ui/components/ui/hover-card.tsx'
+import { Separator } from '@relay/ui/components/ui/separator.tsx'
 import {
   CalendarIcon,
   Hash,

@@ -1,5 +1,5 @@
 {
-  "name": "@echo/lib",
+  "name": "@relay/lib",
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -18,7 +18,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@echo/typescript-config": "workspace:*",
+    "@relay/typescript-config": "workspace:*",
     "typescript": "^5.3.3"
   }
 }

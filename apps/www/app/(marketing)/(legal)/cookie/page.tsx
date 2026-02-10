@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Cookie Policy',
   description:
-    'Learn about how Echo uses cookies to improve your experience and provide essential functionality.',
-  keywords: ['cookie policy', 'cookies', 'privacy', 'data', 'echo'],
+    'Learn about how Relay uses cookies to improve your experience and provide essential functionality.',
+  keywords: ['cookie policy', 'cookies', 'privacy', 'data', 'relay'],
 }
 
 const CookiePolicy = () => {
@@ -67,7 +67,7 @@ const CookiePolicy = () => {
             at:
           </p>
           <a
-            href="mailto:echochat.com@gmail.com"
+            href="mailto:relaychat.com@gmail.com"
             className="ml-0 inline-flex items-center rounded-md bg-black px-3 py-1.5 text-xs font-medium text-white hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:ml-5 sm:px-4 sm:py-2 sm:text-sm"
           >
             Contact Us

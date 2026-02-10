@@ -1,6 +1,6 @@
 import { Clock, SlidersHorizontal, UserCog, Wrench } from 'lucide-react'
 
-import { EchoLoading } from '@/components/ui/EchoLoading'
+import { RelayLoading } from '@/components/ui/RelayLoading'
 import { GridItem } from '@/components/ui/GridItem'
 import { GridItemHeading } from '@/components/ui/GridItemHeading'
 import { OrbitingCircles } from '@/components/ui/OrbitingCircles'
@@ -24,7 +24,7 @@ const CustomControls = () => {
       <div className="flex-center relative">
         <div className="flex-center pointer-events-none absolute inset-x-0 bottom-0 z-40 size-full bg-gradient-to-t from-white via-transparent to-white">
           <Circle className="size-9 text-black/80">
-            <EchoLoading className="size-5" duration={5} />
+            <RelayLoading className="size-5" duration={5} />
           </Circle>
         </div>
         <div className="flex-center relative size-[120px]">

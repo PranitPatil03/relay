@@ -6,8 +6,8 @@ import {
   loginSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
-} from '@echo/lib'
-import client from '@echo/db/src'
+} from '@relay/lib'
+import client from '@relay/db/src'
 import { generateOTP } from '../utils/generateOTP'
 import { sendMail } from '../utils/sendMail'
 import { comparePassword, hashPassword } from '../utils/hashPassword'
@@ -64,7 +64,7 @@ export const sendVerificationOtp = async (
       },
     })
     sendMail({
-      subject: `Echo Chat: OTP to verify your account`,
+      subject: `Relay Chat: OTP to verify your account`,
       email,
       message: `Your verification code is: ${code}`,
       tag: 'verify-email',
@@ -236,7 +236,7 @@ export const forgotPassword = async (
     })
 
     sendMail({
-      subject: `Echo Chat: Reset your password`,
+      subject: `Relay Chat: Reset your password`,
       email,
       message: `${code}`,
       tag: 'password_reset',

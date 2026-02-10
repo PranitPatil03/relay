@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@echo/lib": "workspace:*",
-    "@echo/tailwind-config": "workspace:*",
-    "@echo/ui": "workspace:*",
-    "@echo/utils": "workspace:*",
+    "@relay/lib": "workspace:*",
+    "@relay/tailwind-config": "workspace:*",
+    "@relay/ui": "workspace:*",
+    "@relay/utils": "workspace:*",
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
     "@hookform/resolvers": "^3.9.1",
@@ -39,8 +39,8 @@
     "zustand": "^5.0.1"
   },
   "devDependencies": {
-    "@echo/eslint-config": "workspace:*",
-    "@echo/typescript-config": "workspace:*",
+    "@relay/eslint-config": "workspace:*",
+    "@relay/typescript-config": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

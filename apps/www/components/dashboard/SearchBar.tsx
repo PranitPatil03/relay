@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@echo/ui/components/ui/input.tsx'
+import { Input } from '@relay/ui/components/ui/input.tsx'
 import { LoaderCircle, Search } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'

@@ -14,7 +14,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@echo/db": "workspace:*",
+    "@relay/db": "workspace:*",
     "dotenv": "^16.4.6",
     "flatted": "^3.3.2",
     "jsonwebtoken": "^8.5.1",
@@ -22,8 +22,8 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@echo/eslint-config": "workspace:*",
-    "@echo/typescript-config": "workspace:*",
+    "@relay/eslint-config": "workspace:*",
+    "@relay/typescript-config": "workspace:*",
     "@types/jsonwebtoken": "^8.5.5",
     "@types/ws": "^8.5.13",
     "esbuild": "0.24.2",

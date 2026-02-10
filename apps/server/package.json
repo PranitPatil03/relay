@@ -1,5 +1,5 @@
 {
-  "name": "@echo/server",
+  "name": "@relay/server",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
@@ -16,8 +16,8 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.717.0",
     "@aws-sdk/s3-request-presigner": "^3.717.0",
-    "@echo/db": "workspace:*",
-    "@echo/lib": "workspace:*",
+    "@relay/db": "workspace:*",
+    "@relay/lib": "workspace:*",
     "@types/bcryptjs": "^2.4.6",
     "@types/morgan": "^1.9.9",
     "axios": "^1.7.9",
@@ -37,7 +37,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@echo/typescript-config": "workspace:*",
+    "@relay/typescript-config": "workspace:*",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.5",

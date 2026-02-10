@@ -2,8 +2,8 @@ import { Request, Response } from 'express'
 import { z } from 'zod'
 import jwt, { Secret } from 'jsonwebtoken'
 
-import client from '@echo/db/src'
-import { googleAuthSchema } from '@echo/lib'
+import client from '@relay/db/src'
+import { googleAuthSchema } from '@relay/lib'
 import axios from 'axios'
 import { getGoogleOAuthTokens } from '../utils/getGoogleOuthToken'
 
