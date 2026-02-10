@@ -27,7 +27,9 @@ export const createRoom = async (
     if (maxTimeLimit > MAX_ROOM_DURATION) {
       res
         .status(403)
-        .json({ message: `Room duration cannot exceed ${MAX_ROOM_DURATION} minutes` })
+        .json({
+          message: `Room duration cannot exceed ${MAX_ROOM_DURATION} minutes`,
+        })
       return
     }
 
@@ -35,7 +37,9 @@ export const createRoom = async (
     if (maxUsers > MAX_USERS_PER_ROOM) {
       res
         .status(403)
-        .json({ message: `Room cannot have more than ${MAX_USERS_PER_ROOM} participants` })
+        .json({
+          message: `Room cannot have more than ${MAX_USERS_PER_ROOM} participants`,
+        })
       return
     }
 
@@ -64,7 +68,10 @@ export const createRoom = async (
     if (roomsCreatedToday >= DAILY_ROOM_LIMIT) {
       res
         .status(403)
-        .json({ message: 'Daily room limit reached. You can create up to 10 rooms per day.' })
+        .json({
+          message:
+            'Daily room limit reached. You can create up to 10 rooms per day.',
+        })
       return
     }
 
@@ -73,7 +80,9 @@ export const createRoom = async (
         name,
         isTemporary,
         maxTimeLimit: Math.min(maxTimeLimit, MAX_ROOM_DURATION),
-        closedAt: new Date(Date.now() + Math.min(maxTimeLimit, MAX_ROOM_DURATION) * 60 * 1000),
+        closedAt: new Date(
+          Date.now() + Math.min(maxTimeLimit, MAX_ROOM_DURATION) * 60 * 1000
+        ),
         maxUsers: Math.min(maxUsers, MAX_USERS_PER_ROOM),
         createdBy: {
           connect: {
@@ -88,9 +97,9 @@ export const createRoom = async (
       data: isTemporary
         ? { roomsCount: user.roomsCount + 1 }
         : {
-          roomsCount: user.roomsCount + 1,
-          savedRoomsCount: user.savedRoomsCount + 1,
-        },
+            roomsCount: user.roomsCount + 1,
+            savedRoomsCount: user.savedRoomsCount + 1,
+          },
     })
 
     res.status(201).json(room)

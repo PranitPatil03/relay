@@ -63,7 +63,7 @@ export const sendVerificationOtp = async (
         expires: new Date(Date.now() + 2 * 60 * 1000),
       },
     })
-    sendMail({
+    ;(sendMail({
       subject: `Relay Chat: OTP to verify your account`,
       email,
       message: `Your verification code is: ${code}`,
@@ -72,7 +72,7 @@ export const sendVerificationOtp = async (
       res.json({
         message: 'Verification OTP sent successfully',
         success: true,
-      })
+      }))
   } catch (error) {
     res.status(500).json({ message: 'Failed to send verification OTP' })
   }

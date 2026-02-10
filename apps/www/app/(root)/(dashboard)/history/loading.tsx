@@ -1,4 +1,4 @@
-import { LoadingSpinner } from '@relay/ui/icons/spinner.tsx'
+import { LoadingSpinner } from '@relay/ui/icons/spinner'
 
 export default function Loading() {
   return (

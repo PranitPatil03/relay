@@ -34,7 +34,13 @@ interface LimitCardProps {
   hoverColor: string
 }
 
-function LimitCard({ icon: Icon, title, description, index, hoverColor }: LimitCardProps) {
+function LimitCard({
+  icon: Icon,
+  title,
+  description,
+  index,
+  hoverColor,
+}: LimitCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -47,9 +53,7 @@ function LimitCard({ icon: Icon, title, description, index, hoverColor }: LimitC
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div
-        className="group pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-800/50 to-transparent opacity-0 transition duration-200 group-hover:opacity-100"
-      ></div>
+      <div className="group pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-800/50 to-transparent opacity-0 transition duration-200 group-hover:opacity-100"></div>
       <div className="relative z-10 mb-4 size-7 px-10 transition-all duration-300 group-hover:scale-125">
         <div
           className="transition-colors duration-200 ease-in-out"
@@ -82,13 +86,10 @@ export function CurrentLimits() {
       className="mx-auto my-20 max-w-7xl px-6"
     >
       <div className="mb-10 text-center">
-        <h2 className="mb-3 text-3xl font-bold text-white">
-          Free to Use
-        </h2>
+        <h2 className="mb-3 text-3xl font-bold text-white">Free to Use</h2>
         <p className="mx-auto max-w-2xl text-neutral-400">
           Get started with Relay completely free. No credit card required.
         </p>
-
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3">
@@ -106,5 +107,3 @@ export function CurrentLimits() {
     </motion.div>
   )
 }
-
-

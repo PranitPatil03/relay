@@ -34,4 +34,3 @@ export const AuthLinks = ({ isScrolled }: { isScrolled: boolean }) => {
     </motion.div>
   )
 }
-

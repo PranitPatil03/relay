@@ -14,4 +14,3 @@ const RelayLogo = () => {
   )
 }
 export default RelayLogo
-

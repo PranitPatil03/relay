@@ -1,6 +1,6 @@
 'use client'
 
-import { Switch } from '@relay/ui/components/ui/switch.tsx'
+import { Switch } from '@relay/ui/components/ui/switch'
 import { LayoutGrid, Rows3 } from 'lucide-react'
 
 import { useDisplayStore } from '@/lib/store/DisplayStore'

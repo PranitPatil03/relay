@@ -4,8 +4,8 @@ import { Mail } from 'lucide-react'
 import Link from 'next/link'
 
 import BlurFadeIn from '../ui/BlurFadeIn'
-import { RelayLoading } from '../ui/RelayLoading'
 import LinkButton from '../ui/LinkButton'
+import { RelayLoading } from '../ui/RelayLoading'
 
 import StripesBox from './StripesBox'
 

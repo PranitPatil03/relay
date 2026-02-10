@@ -1,13 +1,13 @@
 'use client'
 
+import data from '@emoji-mart/data'
+import Picker from '@emoji-mart/react'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@relay/ui/components/ui/popover.tsx'
-import { LoadingSpinner } from '@relay/ui/icons/spinner.tsx'
-import data from '@emoji-mart/data'
-import Picker from '@emoji-mart/react'
+} from '@relay/ui/components/ui/popover'
+import { LoadingSpinner } from '@relay/ui/icons/spinner'
 import { Suspense, useState } from 'react'
 
 import { ReactionButton } from './ReactionButton'

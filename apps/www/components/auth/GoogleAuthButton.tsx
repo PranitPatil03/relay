@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@relay/ui/components/ui/button.tsx'
 import { useGoogleLogin } from '@react-oauth/google'
+import { Button } from '@relay/ui/components/ui/button'
 import { useRouter } from 'next/navigation'
 import { useAction } from 'next-safe-action/hooks'
 import { toast } from 'sonner'
@@ -69,7 +69,6 @@ export function GoogleAuthButton({ dark }: { dark?: boolean }) {
     <Button
       variant="outline"
       className={`w-full gap-2 ${dark ? 'border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white' : 'border-white/10 bg-white/5 text-white hover:bg-white/10 hover:text-white'}`}
-
       onClick={handleGoogleLogin}
       disabled={isAuthenticating}
       aria-label="Sign in with Google"
@@ -100,6 +99,5 @@ export function GoogleAuthButton({ dark }: { dark?: boolean }) {
       </svg>
       Google
     </Button>
-
   )
 }

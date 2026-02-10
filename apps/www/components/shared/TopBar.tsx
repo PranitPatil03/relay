@@ -1,7 +1,7 @@
 'use client'
 
-import { Separator } from '@relay/ui/components/ui/separator.tsx'
-import { SidebarTrigger } from '@relay/ui/components/ui/sidebar.tsx'
+import { Separator } from '@relay/ui/components/ui/separator'
+import { SidebarTrigger } from '@relay/ui/components/ui/sidebar'
 import { usePathname } from 'next/navigation'
 
 import { NavUser } from '../Root-user'
@@ -15,11 +15,14 @@ export function TopBar() {
     : 'Dashboard'
 
   return (
-    <div className="mx-auto w-full max-w-screen-xl bg-[#FEFFFE] px-3 md:hidden lg:px-10 border-b border-neutral-200/50 shadow-sm">
+    <div className="mx-auto w-full max-w-screen-xl border-b border-neutral-200/50 bg-[#FEFFFE] px-3 shadow-sm md:hidden lg:px-10">
       <header className="flex h-12 shrink-0 items-center gap-2">
         <div className="flex items-center gap-2 px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4 bg-neutral-200/50" />
+          <Separator
+            orientation="vertical"
+            className="mr-2 h-4 bg-neutral-200/50"
+          />
           <h1 className="text-xl font-semibold leading-7 text-neutral-900 md:text-2xl">
             {title}
           </h1>

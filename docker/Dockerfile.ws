@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies for all workspace packages
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 # Generate Prisma Client (needed for @relay/db)
 RUN pnpm --filter @relay/db db:generate

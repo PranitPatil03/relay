@@ -21,6 +21,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  transpilePackages: ['@relay/ui'],
 }
 
 export default nextConfig

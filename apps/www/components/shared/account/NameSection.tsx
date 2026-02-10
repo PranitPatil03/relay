@@ -1,6 +1,6 @@
 'use client'
 
-import { Input } from '@relay/ui/components/ui/input.tsx'
+import { Input } from '@relay/ui/components/ui/input'
 import { useQueryClient } from '@tanstack/react-query'
 import { useAction } from 'next-safe-action/hooks'
 import { useState } from 'react'
@@ -53,7 +53,9 @@ export function NameSection({ defaultName }: NameSectionProps) {
       description="This will be your display name."
       footer={
         <div className="flex flex-col space-y-2 md:flex-row md:items-center md:justify-between md:space-x-4 md:space-y-0">
-          <p className="text-xs text-neutral-500 dark:text-neutral-400">Max 32 characters.</p>
+          <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            Max 32 characters.
+          </p>
           <div className="w-full md:w-32">
             <Button
               disabled={!hasChanges || isUpdating || status === 'hasSucceeded'}

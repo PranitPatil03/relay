@@ -25,7 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 ? 'w-full flex-1 rounded-lg border border-white/10 bg-white/5 text-white placeholder-neutral-500 focus:border-white/30 focus:outline-none focus:ring-0 sm:text-sm'
                 : 'w-full flex-1 rounded-md border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm',
               props.error &&
-              'border-red-500 focus:border-red-500 focus:ring-red-500',
+                'border-red-500 focus:border-red-500 focus:ring-red-500',
               className
             )}
             ref={ref}
@@ -39,7 +39,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                   className={cn(
                     'size-5 text-white',
                     type === 'password' &&
-                    'transition-opacity group-hover:opacity-0'
+                      'transition-opacity group-hover:opacity-0'
                   )}
                   fill="#ef4444"
                 />
@@ -50,7 +50,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 className={cn(
                   'absolute inset-y-0 right-0 flex items-center px-3',
                   props.error &&
-                  'opacity-0 transition-opacity group-hover:opacity-100'
+                    'opacity-0 transition-opacity group-hover:opacity-100'
                 )}
                 type="button"
                 onClick={() => toggleIsPasswordVisible()}

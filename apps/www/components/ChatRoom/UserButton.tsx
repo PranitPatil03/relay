@@ -4,7 +4,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@relay/ui/components/ui/avatar.tsx'
+} from '@relay/ui/components/ui/avatar'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,12 +12,12 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@relay/ui/components/ui/dropdown-menu.tsx'
+} from '@relay/ui/components/ui/dropdown-menu'
 
 import Downitem from '../Downitem'
 import { UserIcon } from '../icons/animated/user'
-import RelayRoom from '../icons/RelayRoom'
 import FilledUser from '../icons/FilledUser'
+import RelayRoom from '../icons/RelayRoom'
 import { UserIcon as User } from '../icons/UserIcon'
 import AccountDialog from '../shared/AccountDialog'
 import { LogoutButton } from '../shared/LogoutButton'

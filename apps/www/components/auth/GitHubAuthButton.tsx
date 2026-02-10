@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@relay/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button'
 import { useRouter } from 'next/navigation'
 
 import { useAuthStore } from '@/lib/store/auth-store'

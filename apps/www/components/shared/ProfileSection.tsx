@@ -4,18 +4,17 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@relay/ui/components/ui/avatar.tsx'
-
-import { useUser } from '@/hooks/useSession'
-
+} from '@relay/ui/components/ui/avatar'
 import { useAction } from 'next-safe-action/hooks'
 
+import { useUser } from '@/hooks/useSession'
 import { logout } from '@/lib/actions/authActions'
 
 import { LogoutIcon } from '../icons/animated/logout'
-import FilledUser from '../icons/FilledUser'
-import AccountDialog from './AccountDialog'
 import { UserIcon } from '../icons/animated/user'
+import FilledUser from '../icons/FilledUser'
+
+import AccountDialog from './AccountDialog'
 
 export function ProfileSection() {
   const { data, isLoading } = useUser()
@@ -46,7 +45,7 @@ export function ProfileSection() {
             </>
           )}
         </Avatar>
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1">
           <div className="truncate text-sm font-semibold text-neutral-900">
             {isLoading ? (
               <div className="h-4 w-24 animate-pulse rounded bg-neutral-200" />
@@ -68,15 +67,15 @@ export function ProfileSection() {
       <div className="space-y-1 border-t border-neutral-200/50 pt-3">
         <AccountDialog
           trigger={
-            <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-[#FEFFFE] text-neutral-700">
+            <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-neutral-700 transition-colors hover:bg-[#FEFFFE]">
               <UserIcon className="size-4 text-neutral-600" />
               <span>Account</span>
             </button>
           }
         />
         <button
-          onClick={handleLogout}
-          className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm transition-colors hover:bg-[#FEFFFE] text-neutral-700"
+          onClick={() => handleLogout(undefined)}
+          className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-neutral-700 transition-colors hover:bg-[#FEFFFE]"
         >
           <LogoutIcon className="size-4 text-neutral-600" />
           <span>Logout</span>

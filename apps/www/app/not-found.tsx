@@ -1,6 +1,6 @@
 'use client'
 
-import GridPattern from '@relay/ui/components/ui/GridPattern.tsx'
+import GridPattern from '@relay/ui/components/ui/GridPattern'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 

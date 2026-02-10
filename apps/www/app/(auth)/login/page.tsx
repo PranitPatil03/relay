@@ -24,7 +24,7 @@ export default async function LoginPage({
 
   const errorMessage = error
     ? ERROR_MESSAGES[error as keyof typeof ERROR_MESSAGES] ||
-    'An error occurred. Please try again.'
+      'An error occurred. Please try again.'
     : undefined
 
   return (
@@ -34,5 +34,4 @@ export default async function LoginPage({
       </div>
     </div>
   )
-
 }

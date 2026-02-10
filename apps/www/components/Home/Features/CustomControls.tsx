@@ -1,9 +1,9 @@
 import { Clock, SlidersHorizontal, UserCog, Wrench } from 'lucide-react'
 
-import { RelayLoading } from '@/components/ui/RelayLoading'
 import { GridItem } from '@/components/ui/GridItem'
 import { GridItemHeading } from '@/components/ui/GridItemHeading'
 import { OrbitingCircles } from '@/components/ui/OrbitingCircles'
+import { RelayLoading } from '@/components/ui/RelayLoading'
 
 import { Circle } from './RealTimeDemo'
 

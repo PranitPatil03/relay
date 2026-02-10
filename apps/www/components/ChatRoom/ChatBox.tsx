@@ -1,4 +1,4 @@
-import GridPattern from '@relay/ui/components/ui/GridPattern.tsx'
+import GridPattern from '@relay/ui/components/ui/GridPattern'
 import { cn } from '@relay/utils/src'
 
 import { Message } from '@/types'

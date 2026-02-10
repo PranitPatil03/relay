@@ -1,5 +1,5 @@
-import { Card } from '@relay/ui/components/ui/card.tsx'
-import { Separator } from '@relay/ui/components/ui/separator.tsx'
+import { Card } from '@relay/ui/components/ui/card'
+import { Separator } from '@relay/ui/components/ui/separator'
 import React from 'react'
 
 import { PricingPlan } from '@/types'

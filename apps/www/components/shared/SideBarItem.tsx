@@ -18,8 +18,8 @@ const SideBarItem = ({ icon, title, url }: Props) => {
       href={url}
       className={`flex items-end justify-start gap-2.5 rounded-lg p-2 text-sm leading-none outline-none transition-all duration-500 ease-in-out focus-visible:ring-2 focus-visible:ring-black/50 ${
         isActive
-          ? 'text-neutral-900 border border-neutral-200/50 shadow-sm bg-[#FEFFFE]'
-          : 'text-neutral-600 border border-transparent hover:bg-[#FEFFFE] active:bg-[#FBFBFA]'
+          ? 'border border-neutral-200/50 bg-[#FEFFFE] text-neutral-900 shadow-sm'
+          : 'border border-transparent text-neutral-600 hover:bg-[#FEFFFE] active:bg-[#FBFBFA]'
       }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

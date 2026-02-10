@@ -128,14 +128,14 @@ export function ProfileSection({ image }: ProfileSectionProps) {
       <div className="flex items-center gap-3">
         <div className="relative inline-flex">
           <Button
-            className="relative size-12 overflow-hidden rounded-full bg-none hover:bg-neutral-100 dark:hover:bg-neutral-800 md:size-16"
+            className="relative size-12 overflow-hidden rounded-full bg-none hover:bg-neutral-100 md:size-16 dark:hover:bg-neutral-800"
             onClick={handleThumbnailClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             aria-label={imageUrl ? 'Change image' : 'Upload image'}
           >
             <Upload
-              className="absolute size-5 text-neutral-500 dark:text-neutral-400 transition-opacity duration-200 md:size-6"
+              className="absolute size-5 text-neutral-500 transition-opacity duration-200 md:size-6 dark:text-neutral-400"
               style={{
                 opacity: isHovered ? 1 : 0,
                 zIndex: 1,
@@ -156,7 +156,7 @@ export function ProfileSection({ image }: ProfileSectionProps) {
             ) : (
               <div aria-hidden="true">
                 <CircleUserRound
-                  className="size-6 opacity-60 dark:opacity-40 md:size-8 text-neutral-500 dark:text-neutral-400"
+                  className="size-6 text-neutral-500 opacity-60 md:size-8 dark:text-neutral-400 dark:opacity-40"
                   strokeWidth={2}
                 />
               </div>

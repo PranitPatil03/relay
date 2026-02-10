@@ -1,4 +1,4 @@
-import { Button } from '@relay/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button'
 import Link from 'next/link'
 
 const PremiumBox = () => {

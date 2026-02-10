@@ -1,6 +1,6 @@
 'use client'
-import { Input } from '@relay/ui/components/ui/input.tsx'
-import { Label } from '@relay/ui/components/ui/label.tsx'
+import { Input } from '@relay/ui/components/ui/input'
+import { Label } from '@relay/ui/components/ui/label'
 import { Hash } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'

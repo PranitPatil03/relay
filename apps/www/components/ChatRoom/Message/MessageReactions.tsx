@@ -1,16 +1,16 @@
-import { Badge } from '@relay/ui/components/ui/badge.tsx'
+import { Badge } from '@relay/ui/components/ui/badge'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@relay/ui/components/ui/popover.tsx'
-import { ScrollArea, ScrollBar } from '@relay/ui/components/ui/scroll-area.tsx'
+} from '@relay/ui/components/ui/popover'
+import { ScrollArea, ScrollBar } from '@relay/ui/components/ui/scroll-area'
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from '@relay/ui/components/ui/tabs.tsx'
+} from '@relay/ui/components/ui/tabs'
 import { motion } from 'framer-motion'
 
 import { useIdentityStore } from '@/lib/store/useIdentityStore'

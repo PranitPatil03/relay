@@ -4,12 +4,12 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@relay/ui/components/ui/avatar.tsx'
+} from '@relay/ui/components/ui/avatar'
 import {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
-} from '@relay/ui/components/ui/hover-card.tsx'
+} from '@relay/ui/components/ui/hover-card'
 import { CalendarIcon, TimerIcon } from 'lucide-react'
 
 import { UsersIcon } from '@/components/icons/animated/users'

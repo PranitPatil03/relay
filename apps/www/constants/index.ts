@@ -1,3 +1,15 @@
+import {
+  Crown,
+  Globe,
+  Lock,
+  MessageCircle,
+  Rocket,
+  Shield,
+  Zap,
+} from 'lucide-react'
+
+import { PricingPlan } from '@/types'
+
 export const adjectives = [
   'Happy',
   'Clever',
@@ -201,3 +213,54 @@ export const nouns = [
   'Zenitsu',
 ]
 export const navLinks: { href: string; label: string }[] = []
+
+export const plans: PricingPlan[] = [
+  {
+    name: 'Free',
+    icon: Zap,
+    description: 'Perfect for getting started with secure, private chats.',
+    price: '0',
+    badge: null,
+    features: [
+      {
+        icon: MessageCircle,
+        title: 'Temporary Rooms',
+        description: 'Create rooms that auto-delete after 24 hours',
+      },
+      {
+        icon: Shield,
+        title: 'Basic Privacy',
+        description: 'End-to-end encryption for all messages',
+      },
+      {
+        icon: Lock,
+        title: 'Anonymous Access',
+        description: 'Join without creating an account',
+      },
+    ],
+  },
+  {
+    name: 'Pro',
+    icon: Crown,
+    description: 'Unlock advanced features and unlimited possibilities.',
+    price: '9',
+    badge: 'Most Popular',
+    features: [
+      {
+        icon: Globe,
+        title: 'Permanent Rooms',
+        description: 'Create rooms that never expire',
+      },
+      {
+        icon: Rocket,
+        title: 'File Sharing',
+        description: 'Share large files securely',
+      },
+      {
+        icon: Shield,
+        title: 'Advanced Admin',
+        description: 'Kick/Ban users and manage permissions',
+      },
+    ],
+  },
+]

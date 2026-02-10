@@ -1,25 +1,33 @@
 {
-  "extends": "@relay/typescript-config/nextjs.json",
+  "extends": "../../packages/typescript-config/nextjs.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ],
+      "@relay/ui/*": [
+        "../../packages/ui/src/*"
+      ]
     }
   },
   "include": [
     "next-env.d.ts",
-    "next.config.mjs",
+    "next.config.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.mjs",
     ".next/types/**/*.ts",
     "postcss.config.mjs",
-    "tailwind.config.js",
+    "tailwind.config.ts",
     "app/(auth)/forgot-password"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

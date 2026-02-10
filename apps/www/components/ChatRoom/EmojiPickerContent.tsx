@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@relay/ui/components/ui/button.tsx'
 import Picker from '@emoji-mart/react'
+import { Button } from '@relay/ui/components/ui/button'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Plus } from 'lucide-react'
 import { useState } from 'react'

@@ -5,7 +5,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@relay/ui/components/ui/dialog.tsx'
+} from '@relay/ui/components/ui/dialog'
 import { Mail, Twitter } from 'lucide-react'
 import Link from 'next/link'
 

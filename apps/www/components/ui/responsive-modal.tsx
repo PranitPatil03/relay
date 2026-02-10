@@ -1,12 +1,12 @@
 'use client'
 
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import {
   Dialog,
   DialogContent,
   DialogTitle,
-} from '@relay/ui/components/ui/dialog.tsx'
-import { Drawer, DrawerContent } from '@relay/ui/components/ui/drawer.tsx'
-import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
+} from '@relay/ui/components/ui/dialog'
+import { Drawer, DrawerContent } from '@relay/ui/components/ui/drawer'
 
 import { useMediaQuery } from '@/hooks/use-media-query'
 

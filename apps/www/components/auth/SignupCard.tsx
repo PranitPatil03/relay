@@ -1,6 +1,6 @@
 'use client'
-import { signupSchema, type SignupInput } from '@relay/lib'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { signupSchema, type SignupInput } from '@relay/lib'
 import Link from 'next/link'
 import { useAction } from 'next-safe-action/hooks'
 import { useForm } from 'react-hook-form'
@@ -65,9 +65,7 @@ const SignupCard = () => {
         <AuthProviderButtons dark />
         <div className="relative flex items-center">
           <div className="grow border-t border-white/10"></div>
-          <span className="shrink px-3 text-xs text-neutral-500">
-            OR
-          </span>
+          <span className="shrink px-3 text-xs text-neutral-500">OR</span>
           <div className="grow border-t border-white/10"></div>
         </div>
 

@@ -1,6 +1,6 @@
 'use client'
-import { loginSchema, type LoginInput } from '@relay/lib'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { loginSchema, type LoginInput } from '@relay/lib'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAction } from 'next-safe-action/hooks'
@@ -71,9 +71,7 @@ const LoginCard = ({ error }: LoginCardProps) => {
         <AuthProviderButtons dark />
         <div className="relative flex items-center">
           <div className="grow border-t border-white/10"></div>
-          <span className="shrink px-3 text-xs text-neutral-500">
-            OR
-          </span>
+          <span className="shrink px-3 text-xs text-neutral-500">OR</span>
           <div className="grow border-t border-white/10"></div>
         </div>
         <form onSubmit={onSubmit} className="space-y-4">

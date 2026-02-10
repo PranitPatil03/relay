@@ -1,6 +1,6 @@
 'use client'
-import { Button } from '@relay/ui/components/ui/button.tsx'
-import { Textarea } from '@relay/ui/components/ui/textarea.tsx'
+import { Button } from '@relay/ui/components/ui/button'
+import { Textarea } from '@relay/ui/components/ui/textarea'
 import { Send } from 'lucide-react'
 import { FormEvent, useState } from 'react'
 

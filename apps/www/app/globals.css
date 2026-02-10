@@ -194,9 +194,8 @@
 }
 
 .gridGradient {
-  background-image: radial-gradient(circle at center,
-      transparent 50%,
-      white 80%),
+  background-image:
+    radial-gradient(circle at center, transparent 50%, white 80%),
     url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='40' height='40' fill='none' stroke='rgba(26, 28, 30, 0.1)' stroke-width='0.2'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
   background-position: center;
 }
@@ -207,7 +206,8 @@
   }
 
   100% {
-    transform: rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg);
+    transform: rotate(360deg) translateY(calc(var(--radius) * 1px))
+      rotate(-360deg);
   }
 }
 

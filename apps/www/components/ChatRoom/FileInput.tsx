@@ -1,13 +1,13 @@
 'use client'
 
-import { Button } from '@relay/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@relay/ui/components/ui/tooltip.tsx'
-import { LoadingSpinner } from '@relay/ui/icons/spinner.tsx'
+} from '@relay/ui/components/ui/tooltip'
+import { LoadingSpinner } from '@relay/ui/icons/spinner'
 import { X } from 'lucide-react'
 import Image from 'next/image'
 import { useAction } from 'next-safe-action/hooks'

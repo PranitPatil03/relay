@@ -1,5 +1,5 @@
-import { Button } from '@relay/ui/components/ui/button.tsx'
-import { Input } from '@relay/ui/components/ui/input.tsx'
+import { Button } from '@relay/ui/components/ui/button'
+import { Input } from '@relay/ui/components/ui/input'
 import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
 
@@ -22,7 +22,7 @@ export function EmailSection({ email }: EmailSectionProps) {
     >
       <div className="flex w-full max-w-md gap-2 md:gap-3">
         <Input
-          className="bg-neutral-50 dark:bg-neutral-800 text-xs md:text-sm text-neutral-900 dark:text-neutral-100"
+          className="bg-neutral-50 text-xs text-neutral-900 md:text-sm dark:bg-neutral-800 dark:text-neutral-100"
           type="email"
           value={email}
           disabled

@@ -1,4 +1,4 @@
-import { Button } from '@relay/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button'
 import Link from 'next/link'
 
 import CreateRoomButton from '@/components/dashboard/CreateRoomButton'
@@ -30,7 +30,7 @@ export default async function Page(props: {
   ])
 
   return (
-    <div className="items-center justify-center p-4 max-md:border-t max-md:border-neutral-200/50 md:p-6 lg:p-10 bg-[#FEFFFE]">
+    <div className="items-center justify-center bg-[#FEFFFE] p-4 max-md:border-t max-md:border-neutral-200/50 md:p-6 lg:p-10">
       <div className="flex items-center justify-between">
         <h1 className="hidden text-2xl font-semibold text-neutral-900 md:block md:text-3xl">
           Dashboard

@@ -20,7 +20,9 @@ export const NavLinks = () => {
             className="relative p-1 px-3"
           >
             <Link href={href} className="">
-              <span className="text-sm font-medium text-white/70 transition-colors hover:text-white">{label}</span>
+              <span className="text-sm font-medium text-white/70 transition-colors hover:text-white">
+                {label}
+              </span>
             </Link>
             {activeLink === href ? (
               <motion.div
@@ -34,4 +36,3 @@ export const NavLinks = () => {
     </motion.div>
   )
 }
-

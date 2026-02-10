@@ -1,6 +1,6 @@
 'use client'
 
-import { ScrollArea } from '@relay/ui/components/ui/scroll-area.tsx'
+import { ScrollArea } from '@relay/ui/components/ui/scroll-area'
 import { useAction } from 'next-safe-action/hooks'
 import { useEffect, useState } from 'react'
 

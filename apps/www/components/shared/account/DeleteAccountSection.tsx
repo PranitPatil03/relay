@@ -6,8 +6,8 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '@relay/ui/components/ui/dialog.tsx'
-import { Input } from '@relay/ui/components/ui/input.tsx'
+} from '@relay/ui/components/ui/dialog'
+import { Input } from '@relay/ui/components/ui/input'
 import { useQueryClient } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
 import { useAction } from 'next-safe-action/hooks'
@@ -66,7 +66,7 @@ export function DeleteAccountSection() {
         <></>
       </AccountCard>
       <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
-        <DialogContent className="mx-4 max-w-[95%] md:mx-auto md:max-w-[425px] bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800">
+        <DialogContent className="mx-4 max-w-[95%] border-neutral-200 bg-white md:mx-auto md:max-w-[425px] dark:border-neutral-800 dark:bg-neutral-900">
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold text-red-600 dark:text-red-400">
               Delete Account
@@ -77,7 +77,7 @@ export function DeleteAccountSection() {
             </p>
           </DialogHeader>
           <div className="space-y-6 py-6">
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-800/50 p-4">
+            <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-800 dark:bg-neutral-800/50">
               <p className="text-sm font-medium text-red-900 dark:text-red-300">
                 You will lose access to:
               </p>
@@ -95,7 +95,7 @@ export function DeleteAccountSection() {
                 value={confirmText}
                 onChange={(e) => setConfirmText(e.target.value)}
                 placeholder="Type 'delete my account' to confirm"
-                className="border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 focus-visible:ring-red-500"
+                className="border-neutral-200 bg-white text-neutral-900 focus-visible:ring-red-500 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100"
               />
             </div>
           </div>
@@ -103,7 +103,7 @@ export function DeleteAccountSection() {
             <Button
               onClick={() => setShowConfirmDialog(false)}
               disabled={isLoading}
-              className="w-full hover:bg-neutral-100 dark:hover:bg-neutral-800 md:w-auto"
+              className="w-full hover:bg-neutral-100 md:w-auto dark:hover:bg-neutral-800"
             >
               Cancel
             </Button>
@@ -111,7 +111,7 @@ export function DeleteAccountSection() {
               onClick={() => handleDelete()}
               disabled={confirmText !== 'delete my account' || isLoading}
               isLoading={isLoading}
-              className="w-full bg-red-600 hover:bg-red-700 dark:bg-red-600 dark:hover:bg-red-700 focus-visible:ring-red-500 md:w-auto"
+              className="w-full bg-red-600 hover:bg-red-700 focus-visible:ring-red-500 md:w-auto dark:bg-red-600 dark:hover:bg-red-700"
             >
               Delete Account
             </Button>

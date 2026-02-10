@@ -17,7 +17,14 @@ export const metadata: Metadata = {
   },
   description:
     'Pass messages instantly. Create private rooms, invite your team, and start collaborating in seconds. No barriers, just connection.',
-  keywords: ['chat', 'real-time', 'communication', 'relay', 'instant messaging', 'team chat'],
+  keywords: [
+    'chat',
+    'real-time',
+    'communication',
+    'relay',
+    'instant messaging',
+    'team chat',
+  ],
   authors: [
     {
       name: 'Rohit Singh Rawat',
@@ -50,7 +57,6 @@ export const metadata: Metadata = {
     images: ['/images/relay.png'],
   },
 }
-
 
 export default function RootLayout({
   children,
@@ -88,7 +94,7 @@ export default function RootLayout({
         <link rel="image/png" href="/images/relay.png" />
       </head>
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistSans.className} antialiased bg-background text-foreground`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${GeistSans.className} bg-background text-foreground antialiased`}
       >
         <ThemeProvider defaultTheme="dark" storageKey="relay-ui-theme">
           <main>

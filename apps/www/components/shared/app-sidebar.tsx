@@ -8,11 +8,11 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@relay/ui/components/ui/sidebar.tsx'
+} from '@relay/ui/components/ui/sidebar'
 
-import RelayLogo from '../icons/animated/RelayLogo'
 import { History } from '../icons/animated/History'
 import { HomeIcon } from '../icons/animated/Home'
+import RelayLogo from '../icons/animated/RelayLogo'
 import { NavUser } from '../Root-user'
 
 import { ProfileSection } from './ProfileSection'
@@ -34,7 +34,10 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset" className="bg-[#FBFBFA] border-neutral-200/50 shadow-sm">
+    <Sidebar
+      variant="inset"
+      className="border-neutral-200/50 bg-[#FBFBFA] shadow-sm"
+    >
       <SidebarContent className="ju flex flex-col">
         <SidebarHeader className="flex flex-row items-center justify-between max-md:p-4">
           <RelayLogo />

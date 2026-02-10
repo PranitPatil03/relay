@@ -1,6 +1,7 @@
 {
   "extends": "@relay/typescript-config/react-library.json",
   "compilerOptions": {
+    "jsx": "react",
     "outDir": "dist"
   }
 }

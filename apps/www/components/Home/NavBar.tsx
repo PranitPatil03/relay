@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react'
 
 import { navLinks } from '@/constants'
 
-
 import { AuthLinks } from './AuthLinks'
 import HamburgerMenu from './HamburgerMenu'
 import { NavLinks } from './NavLinks'
@@ -93,7 +92,6 @@ export const NavBar = () => {
   return (
     <motion.div
       className="fixed inset-x-0 top-0 z-[100] w-full bg-[#0a0a0a]/80 backdrop-blur-md"
-
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -103,4 +101,3 @@ export const NavBar = () => {
     </motion.div>
   )
 }
-

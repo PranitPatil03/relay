@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 import { CurrentLimits } from '@/components/Home/CurrentLimits'
 import { FeatureCards } from '@/components/Home/Features/FeatureCards'
@@ -26,4 +26,3 @@ export default function Page() {
     </>
   )
 }
-

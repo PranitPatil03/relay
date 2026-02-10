@@ -1,8 +1,8 @@
 'use client'
-import { createRoomSchema } from '@relay/lib'
-import { Input as Input2 } from '@relay/ui/components/ui/input.tsx'
-import { Switch } from '@relay/ui/components/ui/switch.tsx'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { createRoomSchema } from '@relay/lib'
+import { Input as Input2 } from '@relay/ui/components/ui/input'
+import { Switch } from '@relay/ui/components/ui/switch'
 import { ChevronDown, ChevronUp, Minus, Plus } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useAction } from 'next-safe-action/hooks'
@@ -216,7 +216,7 @@ export default function CreateRoomButton({
         )}
       </Button2>
       {isQuotaExhausted && (
-        <span className="text-[11px] text-red-500 font-medium">
+        <span className="text-[11px] font-medium text-red-500">
           Daily room quota exceeded — resets at midnight
         </span>
       )}

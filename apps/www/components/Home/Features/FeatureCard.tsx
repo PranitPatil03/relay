@@ -27,9 +27,13 @@ export function FeatureCard({
     <div
       className={cn(
         'group relative flex flex-col py-10',
-        direction === 'up' ? 'lg:border-b lg:border-dashed lg:border-white/10' : '',
+        direction === 'up'
+          ? 'lg:border-b lg:border-dashed lg:border-white/10'
+          : '',
         'lg:border-r lg:border-dashed lg:border-white/10',
-        index === 0 || index === 3 ? 'lg:border-l lg:border-dashed lg:border-white/10' : '',
+        index === 0 || index === 3
+          ? 'lg:border-l lg:border-dashed lg:border-white/10'
+          : '',
         className
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -68,4 +72,3 @@ export function FeatureCard({
     </div>
   )
 }
-

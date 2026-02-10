@@ -3,20 +3,20 @@ import {
   Avatar,
   AvatarImage,
   AvatarFallback,
-} from '@relay/ui/components/ui/avatar.tsx'
-import { Button } from '@relay/ui/components/ui/button.tsx'
-import { Card, CardContent, CardFooter } from '@relay/ui/components/ui/card.tsx'
+} from '@relay/ui/components/ui/avatar'
+import { Button } from '@relay/ui/components/ui/button'
+import { Card, CardContent, CardFooter } from '@relay/ui/components/ui/card'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@relay/ui/components/ui/dropdown-menu.tsx'
+} from '@relay/ui/components/ui/dropdown-menu'
 import {
   HoverCard,
   HoverCardTrigger,
   HoverCardContent,
-} from '@relay/ui/components/ui/hover-card.tsx'
+} from '@relay/ui/components/ui/hover-card'
 import { Hash, MoreHorizontal } from 'lucide-react'
 
 import { useTimeLeft } from '@/hooks/useTimeLeft'
@@ -202,7 +202,7 @@ export default function ChatRoomCard({
     knownParticipants.length - displayParticipants.length
 
   return (
-    <Card className="w-full max-w-96 overflow-hidden transition-all duration-300 ease-in-out bg-[#FEFFFE] dark:bg-[#1A1A1A] border-neutral-200/50 dark:border-neutral-800/50 shadow-sm dark:shadow-[0_1px_3px_0_rgba(0,0,0,0.3)] hover:shadow-md dark:hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)]">
+    <Card className="w-full max-w-96 overflow-hidden border-neutral-200/50 bg-[#FEFFFE] shadow-sm transition-all duration-300 ease-in-out hover:shadow-md dark:border-neutral-800/50 dark:bg-[#1A1A1A] dark:shadow-[0_1px_3px_0_rgba(0,0,0,0.3)] dark:hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)]">
       <CardContent className="p-3 md:p-4">
         <RoomHeader title={title} id={id} onJoin={onJoin} />
         <div className="mt-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">

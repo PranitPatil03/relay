@@ -1,4 +1,4 @@
-import { LoadingSpinner as Spinner } from '@relay/ui/icons/spinner.tsx'
+import { LoadingSpinner as Spinner } from '@relay/ui/icons/spinner'
 
 const loading = () => {
   return (

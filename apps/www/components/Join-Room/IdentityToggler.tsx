@@ -1,7 +1,7 @@
 'use client'
 
-import { Label } from '@relay/ui/components/ui/label.tsx'
-import { Switch } from '@relay/ui/components/ui/switch.tsx'
+import { Label } from '@relay/ui/components/ui/label'
+import { Switch } from '@relay/ui/components/ui/switch'
 import { User } from 'lucide-react'
 import { useState } from 'react'
 

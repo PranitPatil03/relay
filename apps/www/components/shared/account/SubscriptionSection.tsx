@@ -1,4 +1,4 @@
-import { Button } from '@relay/ui/components/ui/button.tsx'
+import { Button } from '@relay/ui/components/ui/button'
 import { Sparkles } from 'lucide-react'
 import Link from 'next/link'
 

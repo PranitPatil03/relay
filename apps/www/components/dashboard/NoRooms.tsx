@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@relay/ui/components/ui/button.tsx'
-import { CardStack } from '@relay/ui/components/ui/CardStack.tsx'
+import { Button } from '@relay/ui/components/ui/button'
+import { CardStack } from '@relay/ui/components/ui/CardStack'
 import Link from 'next/link'
 
 import { UserStats } from '@/types'
@@ -29,16 +29,14 @@ export default function NoRooms({ stats }: { stats: UserStats }) {
     <div className="relative flex min-h-[300px] flex-col items-center justify-center gap-6 md:min-h-[400px] md:gap-8">
       {' '}
       <div className="relative flex h-40 w-72 translate-y-16 items-center justify-center md:h-60 md:w-96 md:translate-y-20">
-        <div
-          className="absolute inset-0 left-0 z-10 bg-gradient-to-b from-transparent via-transparent to-[#FEFFFE] dark:to-[#0F0F0F]"
-        ></div>
+        <div className="absolute inset-0 left-0 z-10 bg-gradient-to-b from-transparent via-transparent to-[#FEFFFE] dark:to-[#0F0F0F]"></div>
         <CardStack items={dummyRooms} />
       </div>
       <div className="z-50 text-center">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white md:text-xl">
+        <h2 className="text-lg font-semibold text-gray-900 md:text-xl dark:text-white">
           No active rooms found
         </h2>
-        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 md:text-base">
+        <p className="mt-2 text-sm text-gray-500 md:text-base dark:text-gray-400">
           Start by creating a new room or join an existing one
         </p>
       </div>
