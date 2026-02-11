@@ -54,18 +54,16 @@ function GitHubCallbackContent() {
   }, [error, code, router, execute])
 
   return (
-    <div className="gridGradient flex-center h-screen w-screen place-items-center">
-      <div className="grid gap-4 text-center">
-        <Github className="mx-auto size-12 animate-pulse text-gray-800" />
-        <div className="text-lg font-medium">Authenticating with GitHub...</div>
-        <div className="text-sm text-gray-500">
-          Please wait while we complete the process
-        </div>
-        <div className="text-xs text-gray-400">
-          You will be redirected to your dashboard once authenticated
-        </div>
-        <div className="mt-2 text-[10px] text-gray-400">
-          This may take a few seconds
+    <div className="flex h-screen w-screen items-center justify-center bg-background">
+      <div className="flex flex-col items-center gap-4 text-center">
+        <Github className="size-12 animate-pulse text-foreground" />
+        <div className="space-y-1">
+          <div className="text-lg font-medium text-foreground">
+            Authenticating with GitHub...
+          </div>
+          <div className="text-sm text-muted-foreground">
+            Please wait while we complete the process
+          </div>
         </div>
       </div>
     </div>
@@ -76,10 +74,10 @@ export default function GitHubCallbackPage() {
   return (
     <Suspense
       fallback={
-        <div className="gridGradient flex-center h-screen w-screen place-items-center">
-          <div className="grid gap-4 text-center">
-            <Github className="mx-auto size-12 animate-pulse text-gray-800" />
-            <div className="text-lg font-medium">Loading...</div>
+        <div className="flex h-screen w-screen items-center justify-center bg-background">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <Github className="size-12 animate-pulse text-foreground" />
+            <div className="text-lg font-medium text-foreground">Loading...</div>
           </div>
         </div>
       }
