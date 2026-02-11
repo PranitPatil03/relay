@@ -3,10 +3,10 @@
 import { createRoomSchema } from '@relay/lib'
 import { revalidateTag } from 'next/cache'
 import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
 import { z } from 'zod'
 
 // ...existing code...
-import { redirect } from 'next/navigation'
 
 import { Message, Rooms } from '@/types'
 
@@ -29,8 +29,9 @@ export async function getRooms({
       queryParams.append('search', search)
     }
 
-    const url = `${process.env.NEXT_PUBLIC_SERVER_API_BASE_URL}/api/v1/rooms/getRooms${queryParams.toString() ? `?${queryParams.toString()}` : ''
-      }`
+    const url = `${process.env.NEXT_PUBLIC_SERVER_API_BASE_URL}/api/v1/rooms/getRooms${
+      queryParams.toString() ? `?${queryParams.toString()}` : ''
+    }`
 
     const response = await fetch(url, {
       headers: {

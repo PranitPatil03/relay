@@ -16,7 +16,10 @@ export async function middleware(request: NextRequest) {
   }
 
   // If user is on auth pages (login/register) but has a token, redirect to dashboard
-  if (token && authPaths.some((path) => request.nextUrl.pathname.startsWith(path))) {
+  if (
+    token &&
+    authPaths.some((path) => request.nextUrl.pathname.startsWith(path))
+  ) {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 

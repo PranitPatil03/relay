@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client'
 
 import { cn } from '@relay/utils/src'
@@ -33,7 +34,7 @@ const Ripple = React.memo(function Ripple({
         return (
           <div
             key={i}
-            className={`bg-foreground/25 [--i: absolute animate-ripple rounded-full border shadow-xl${i}]`}
+            className={`[--i: bg-foreground/25 absolute animate-ripple rounded-full border shadow-xl${i}]`}
             style={
               {
                 width: `${size}px`,

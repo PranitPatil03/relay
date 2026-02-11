@@ -28,7 +28,7 @@ const MobileNav = () => {
 
   return (
     <div className="relative z-50 mx-auto space-y-2 lg:hidden">
-      <div className="relative flex w-full items-center justify-between px-4 py-4">
+      <div className="relative flex w-full items-center justify-between p-4">
         <Link href="/" className="z-[60] text-xl font-bold text-white">
           Relay
         </Link>

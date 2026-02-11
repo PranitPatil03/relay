@@ -1,87 +1,101 @@
-# Relay Chat
+# Relay
 
-![relay](https://github.com/user-attachments/assets/47b1d863-4d1e-4ef7-a8bf-fb297f4cccaa)
+> **Start Chatting without frictions.**
+> One click to create a room. One link to invite your team. Zero barriers to communication.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green)](https://nodejs.org/)
-[![PNPM](https://img.shields.io/badge/pnpm-8%2B-orange)](https://pnpm.io/)
-
- <!-- Replace with actual banner image -->
-
-![relay-ss](https://github.com/user-attachments/assets/e058afae-c418-4bbc-8b6a-fc45ea6a745b)
-
-**Real-time chat rooms** for instant collaboration with privacy-first design. No signups, no tracking – just seamless communication.  
-🌐 Live Demo: [https://relay.rsrcraft.me](https://relay.rsrcraft.me)
+🌐 **Live Demo:** [https://getrealy.vercel.app](https://getrealy.vercel.app)
 
 ---
 
 ## ✨ Features
 
-- **🚀 Instant Rooms**: Create/join rooms in 2 clicks
-- **🔒 Privacy First**: End-to-end encrypted messages
-- **🕵️‍♂️ Anonymous**: No personal data collected
-
-- **🚀 Real-Time Messaging**: WebSocket-powered live updates
-- **🔒 SSL Encryption**: Secured conversations with SSL/TLS encryption
-- **📅 Message History**: Scroll through past chats
-- **🕹 Custom Controls**: Set user limits & room expiration
-- **📤 File Sharing**: AWS S3 + CloudFront CDN integration
-- **🔑 OAuth Login**: Google/GitHub authentication
+- **🚀 Instant Rooms**: Create and join chat rooms in seconds. No unnecessary barriers.
+- **🔒 Privacy First**: Designed for private, ephemeral communication.
+- **⚡ Real-Time**: Powered by high-performance WebSockets for instant message delivery.
+- **📂 File Sharing**: Seamlessly share images and files (AWS S3 + CloudFront).
+- **🔑 Secure Authentication**: Optional Google and GitHub login for managing persistent rooms.
+- **🎨 Modern UI**: Beautiful, responsive interface built with Tailwind CSS and Framer Motion.
+- **📊 User Dashboard**: Track your room usage and manage active sessions.
 
 ---
 
 ## 🛠 Tech Stack
 
-**Frontend**  
-![Next.js](https://img.shields.io/badge/Next.js-15.0%2B-000000?logo=next.js)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3%2B-06B6D4?logo=tailwind-css)
-![Turborepo](https://img.shields.io/badge/Turborepo-1.10%2B-EF4444?logo=turborepo)
+### Frontend
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS, Framer Motion
+- **Components:** Radix UI, Lucide React
+- **State Management:** Zustand
 
-**Backend**  
-![Express.js](https://img.shields.io/badge/Express.js-4.18%2B-000000?logo=express)
-![Prisma](https://img.shields.io/badge/Prisma-5.5%2B-2D3748?logo=prisma)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16%2B-4169E1?logo=postgresql)
+### Backend & Infrastructure
+- **API Server:** Node.js, Express
+- **WebSocket Server:** Native `ws` library for high-performance real-time communication
+- **Database:** PostgreSQL (Neon Serverless)
+- **ORM:** Prisma
+- **Caching & Pub/Sub:** Redis (Upstash)
+- **Storage:** AWS S3 + CloudFront CDN
+- **Monorepo:** Turborepo
 
-**Infra**  
-![AWS](https://img.shields.io/badge/AWS-EC2%2FS3-FF9900?logo=amazon-aws)
-![Vercel](https://img.shields.io/badge/Vercel-Deployment-000000?logo=vercel)
-![Nginx](https://img.shields.io/badge/Nginx-1.25%2B-009639?logo=nginx)
+### Deployment
+- **Frontend:** Vercel
+- **Backend:** Railway
 
 ---
 
 ## 🚀 Quick Start
 
+Follow these steps to run Relay locally on your machine.
+
 ### Prerequisites
+- Node.js 18+
+- pnpm (Preferred package manager)
+- PostgreSQL (Local or Cloud)
+- Redis (Local or Cloud)
 
-- Node.js v18+
-- PNPM v8+
-- PostgreSQL & Redis
-- AWS CLI configured
+### Installation
 
-```bash
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/relay.git
+   cd relay
+   ```
 
-# 1. Clone repository
-git clone https://github.com/Rohit-Singh-Rawat/Relay-Chat.git
-cd Relay-Chat
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
 
-# 2. Install dependencies
-pnpm install
+3. **Environment Setup**
+   Copy the example environment files and update them with your credentials.
+   
+   **Root/Monorepo:**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   **Frontend (Apps/www):**
+   ```bash
+   cp apps/www/.env.example apps/www/.env
+   ```
+   
+   **Server (Apps/server):**
+   ```bash
+   cp apps/server/.env.example apps/server/.env
+   ```
 
-# 3. Configure environment
-# ========================
-# Frontend: Copy .env.example to .env and update values as needed
-# Backend: Copy apps/server/.env.example to apps/server/.env and update values as needed
+4. **Database Setup**
+   Initialize the database via Prisma.
+   ```bash
+   pnpm db:generate
+   pnpm db:push
+   ```
 
-# 4. Generate Prisma client
-pnpm db:generate
+5. **Start Development Server**
+   Run the frontend, backend, and websocket server concurrently.
+   ```bash
+   pnpm dev
+   ```
 
-# 5. Run database migrations
-pnpm db:migrate
+The application should now be running at `http://localhost:3000`.
 
-# 6. Start development servers
-pnpm dev
-```
-
-## 🙋‍♂️ Contributing
-
-We welcome contributions!
+---

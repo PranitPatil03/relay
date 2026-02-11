@@ -38,7 +38,7 @@ export default function RoomListRow({
   totalParticipants = 16,
   messageCount = 8,
   closedAt = new Date(Date.now() + 45 * 60 * 1000),
-  onJoin = () => console.log('Joined the room'),
+  onJoin = () => { },
 }: RoomListRowProps) {
   const timeLeft = useTimeLeft(closedAt)
   const { setAnonymous } = useIdentityStore()

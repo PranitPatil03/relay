@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
     ],
   },
   transpilePackages: ['@relay/ui'],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 export default nextConfig

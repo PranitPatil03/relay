@@ -77,7 +77,9 @@ export default function GitHubCallbackPage() {
         <div className="flex h-screen w-screen items-center justify-center bg-background">
           <div className="flex flex-col items-center gap-4 text-center">
             <Github className="size-12 animate-pulse text-foreground" />
-            <div className="text-lg font-medium text-foreground">Loading...</div>
+            <div className="text-lg font-medium text-foreground">
+              Loading...
+            </div>
           </div>
         </div>
       }

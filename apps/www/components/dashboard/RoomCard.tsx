@@ -194,7 +194,7 @@ export default function ChatRoomCard({
   totalParticipants = 16,
   messageCount = 8,
   closedAt = new Date(Date.now() + 45 * 60 * 1000),
-  onJoin = () => console.log('Joined the room'),
+  onJoin = () => { },
 }: ChatRoomCardProps) {
   const timeLeft = useTimeLeft(closedAt)
   const displayParticipants = knownParticipants.slice(0, 3)

@@ -1,9 +1,8 @@
 'use server'
+
 import { updateProfileSchema } from '@relay/lib'
 import { revalidateTag } from 'next/cache'
 import { cookies } from 'next/headers'
-
-// ...existing code...
 import { redirect } from 'next/navigation'
 
 import { UserStats } from '@/types'
@@ -58,7 +57,7 @@ export const updateProfile = actionClient
     if (!token) {
       throw new Error('Not authenticated')
     }
-    console.log(input)
+    // console.log(input) removed
 
     try {
       const response = await fetch(

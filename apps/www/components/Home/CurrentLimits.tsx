@@ -53,7 +53,7 @@ function LimitCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="group pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-800/50 to-transparent opacity-0 transition duration-200 group-hover:opacity-100"></div>
+      <div className="group pointer-events-none absolute inset-0 size-full bg-gradient-to-b from-neutral-800/50 to-transparent opacity-0 transition duration-200 group-hover:opacity-100"></div>
       <div className="relative z-10 mb-4 size-7 px-10 transition-all duration-300 group-hover:scale-125">
         <div
           className="transition-colors duration-200 ease-in-out"

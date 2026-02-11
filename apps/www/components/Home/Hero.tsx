@@ -97,8 +97,8 @@ function NeurixBackground() {
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 size-full" />
-      <div className="absolute left-0 right-0 top-0 h-[8%] bg-gradient-to-b from-[#0a0a0a] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-[10%] bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-[8%] bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-[10%] bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
       <div
         className="absolute inset-0"
@@ -115,7 +115,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100vh] items-center justify-center overflow-hidden pt-20"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
     >
       <NeurixBackground />
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">

@@ -29,7 +29,7 @@ export default function NoRooms({ stats }: { stats: UserStats }) {
     <div className="relative flex min-h-[300px] flex-col items-center justify-center gap-6 md:min-h-[400px] md:gap-8">
       {' '}
       <div className="relative flex h-40 w-72 translate-y-16 items-center justify-center md:h-60 md:w-96 md:translate-y-20">
-        <div className="absolute inset-0 left-0 z-10 bg-gradient-to-b from-transparent via-transparent to-[#FEFFFE] dark:to-[#0F0F0F]"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-[#FEFFFE] dark:to-[#0F0F0F]"></div>
         <CardStack items={dummyRooms} />
       </div>
       <div className="z-50 text-center">
