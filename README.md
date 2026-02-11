@@ -21,24 +21,17 @@
 
 ## 🛠 Tech Stack
 
-### Frontend
-- **Framework:** Next.js 15 (App Router)
-- **Styling:** Tailwind CSS, Framer Motion
-- **Components:** Radix UI, Lucide React
-- **State Management:** Zustand
-
-### Backend & Infrastructure
-- **API Server:** Node.js, Express
-- **WebSocket Server:** Native `ws` library for high-performance real-time communication
-- **Database:** PostgreSQL (Neon Serverless)
-- **ORM:** Prisma
-- **Caching & Pub/Sub:** Redis (Upstash)
-- **Storage:** AWS S3 + CloudFront CDN
-- **Monorepo:** Turborepo
-
-### Deployment
-- **Frontend:** Vercel
-- **Backend:** Railway
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend** | Next.js 15, React 19, TypeScript, Tailwind CSS |
+| **Backend** | Node.js, Express, Native WS (WebSockets) |
+| **Database** | PostgreSQL (Neon), Redis (Upstash) |
+| **ORM** | Prisma |
+| **Storage** | AWS S3 + CloudFront CDN |
+| **Auth** | NextAuth / Custom Auth (GitHub & Google OAuth) |
+| **UI** | Radix UI, Lucide React, Framer Motion |
+| **Monorepo** | Turborepo |
+| **Deployment** | Vercel (Frontend), Railway (Backend) |
 
 ---
 

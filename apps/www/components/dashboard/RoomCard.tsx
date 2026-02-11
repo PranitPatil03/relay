@@ -202,7 +202,7 @@ export default function ChatRoomCard({
     knownParticipants.length - displayParticipants.length
 
   return (
-    <Card className="w-full max-w-96 overflow-hidden border-neutral-200/50 bg-[#FEFFFE] shadow-sm transition-all duration-300 ease-in-out hover:shadow-md dark:border-neutral-800/50 dark:bg-[#1A1A1A] dark:shadow-[0_1px_3px_0_rgba(0,0,0,0.3)] dark:hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)]">
+    <Card className="w-full max-w-96 overflow-hidden border-neutral-200/50 bg-[#FEFFFE] shadow-sm transition-all duration-300 ease-in-out hover:shadow-md">
       <CardContent className="p-3 md:p-4">
         <RoomHeader title={title} id={id} onJoin={onJoin} />
         <div className="mt-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
