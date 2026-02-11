@@ -15,43 +15,9 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  if (token) {
-    try {
-      const response = await fetch(`${process.env.HOST}/api/auth/session`, {
-        headers: {
-          Cookie: `token=${token}`,
-        },
-      })
-      if (!response.ok) {
-        const response = NextResponse.redirect(
-          new URL('/login?error=no_user_found', request.url)
-        )
-        response.cookies.delete('token')
-        return response
-      }
-
-      const { user } = await response.json()
-      if (!user) {
-        const response = NextResponse.redirect(
-          new URL('/login?error=no_user_found', request.url)
-        )
-        response.cookies.delete('token')
-        return response
-      }
-      if (user && !user.subscription && request.nextUrl.pathname !== '/plans') {
-        return NextResponse.redirect(new URL('/plans', request.url))
-      }
-
-      if (authPaths.some((path) => request.nextUrl.pathname.startsWith(path))) {
-        return NextResponse.redirect(new URL('/dashboard', request.url))
-      }
-    } catch (error) {
-      const response = NextResponse.redirect(
-        new URL('/error?code=something_went_wrong', request.url)
-      )
-      response.cookies.delete('token')
-      return response
-    }
+  // If user is on auth pages (login/register) but has a token, redirect to dashboard
+  if (token && authPaths.some((path) => request.nextUrl.pathname.startsWith(path))) {
+    return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
   return NextResponse.next()

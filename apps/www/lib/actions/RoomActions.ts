@@ -5,9 +5,13 @@ import { revalidateTag } from 'next/cache'
 import { cookies } from 'next/headers'
 import { z } from 'zod'
 
+// ...existing code...
+import { redirect } from 'next/navigation'
+
 import { Message, Rooms } from '@/types'
 
 import { actionClient } from './safe-actions'
+
 export async function getRooms({
   search = '',
 }: {
@@ -16,7 +20,7 @@ export async function getRooms({
   const cookieStore = await cookies()
   const token = cookieStore.get('token')
   if (!token) {
-    throw new Error('Not authenticated')
+    redirect('/login')
   }
 
   try {
@@ -25,9 +29,8 @@ export async function getRooms({
       queryParams.append('search', search)
     }
 
-    const url = `${process.env.NEXT_PUBLIC_SERVER_API_BASE_URL}/api/v1/rooms/getRooms${
-      queryParams.toString() ? `?${queryParams.toString()}` : ''
-    }`
+    const url = `${process.env.NEXT_PUBLIC_SERVER_API_BASE_URL}/api/v1/rooms/getRooms${queryParams.toString() ? `?${queryParams.toString()}` : ''
+      }`
 
     const response = await fetch(url, {
       headers: {
@@ -39,6 +42,10 @@ export async function getRooms({
       },
     })
 
+    if (response.status === 401) {
+      redirect('/login')
+    }
+
     if (!response.ok) {
       throw new Error('Failed to fetch rooms')
     }
@@ -48,6 +55,9 @@ export async function getRooms({
     return data
   } catch (error) {
     console.error('Error fetching rooms:', error)
+    if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
+      throw error
+    }
     throw error
   }
 }

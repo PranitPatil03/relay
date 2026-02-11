@@ -3,6 +3,9 @@ import { updateProfileSchema } from '@relay/lib'
 import { revalidateTag } from 'next/cache'
 import { cookies } from 'next/headers'
 
+// ...existing code...
+import { redirect } from 'next/navigation'
+
 import { UserStats } from '@/types'
 
 import { actionClient } from './safe-actions'
@@ -11,7 +14,7 @@ export async function getUserStats() {
   const cookieStore = await cookies()
   const token = cookieStore.get('token')
   if (!token) {
-    throw new Error('Not authenticated')
+    redirect('/login')
   }
 
   try {
@@ -28,6 +31,10 @@ export async function getUserStats() {
       }
     )
 
+    if (response.status === 401) {
+      redirect('/login')
+    }
+
     if (!response.ok) {
       throw new Error('Failed to fetch user stats')
     }
@@ -36,6 +43,9 @@ export async function getUserStats() {
     return data
   } catch (error) {
     console.error('Error fetching user stats:', error)
+    if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
+      throw error
+    }
     throw error
   }
 }
