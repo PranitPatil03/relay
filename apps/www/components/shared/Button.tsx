@@ -1,8 +1,8 @@
 import { Button as Button2 } from '@relay/ui/components/ui/button'
 import { LoadingSpinner } from '@relay/ui/icons/spinner'
-import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ComponentProps<typeof Button2> {
   children: ReactNode
   isLoading?: boolean
 }
@@ -18,11 +18,10 @@ export const Button = ({
     <Button2
       {...props}
       disabled={isLoading || disabled}
-      className={`${className} hover:ring-2 hover:ring-gray-200 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-800 ${
-        isLoading
+      className={`${className} hover:ring-2 hover:ring-gray-200 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-800 ${isLoading
           ? 'cursor-not-allowed border border-gray-300 text-gray-400 outline-none'
           : ''
-      }`}
+        }`}
     >
       {isLoading ? <LoadingSpinner /> : children}
     </Button2>

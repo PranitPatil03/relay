@@ -14,8 +14,7 @@ import {
 import { History } from '../icons/animated/History'
 import { HomeIcon } from '../icons/animated/Home'
 import RelayLogo from '../icons/animated/RelayLogo'
-import { NavUser } from '../Root-user'
-
+import { UserIcon } from '../icons/animated/user'
 import { ProfileSection } from './ProfileSection'
 import SideBarItem from './SideBarItem'
 
@@ -30,6 +29,11 @@ const items = [
     title: 'History',
     url: '/history',
     icon: <History />,
+  },
+  {
+    title: 'Profile',
+    url: '/profile',
+    icon: <UserIcon />,
   },
 ]
 

@@ -33,9 +33,6 @@ export const JoinRoomForm = ({
       onSubmit={submitForm}
       className="flex flex-col items-center max-md:my-3"
     >
-      <div className="rounded-full border border-gray-200 bg-white p-2 shadow-sm">
-        <RelayRoom className="size-5" />
-      </div>
       <div className="mb-8 mt-4">
         <h1 className="text-2xl font-semibold">Join a room</h1>
       </div>

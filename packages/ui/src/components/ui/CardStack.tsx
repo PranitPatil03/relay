@@ -1,12 +1,12 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ReactNode } from 'react'
 import { motion } from 'framer-motion'
 
 let interval: any
 
 type Card = {
   id: number
-  content: React.ReactNode
+  content: ReactNode
 }
 
 export const CardStack = ({
@@ -43,7 +43,7 @@ export const CardStack = ({
         return (
           <motion.div
             key={card.id}
-            className="absolute flex h-fit w-fit flex-col justify-between rounded-xl border border-blue-200/50 bg-white p-4 shadow-md shadow-black/[0.1] md:h-40 md:w-60 dark:border-white/[0.1] dark:bg-black dark:shadow-white/[0.05]"
+            className="absolute flex h-fit w-fit flex-col justify-between rounded-lg border border-border bg-white dark:bg-white p-4 shadow-md shadow-black/[0.05] md:h-40 md:w-60"
             style={{
               transformOrigin: 'center center',
             }}

@@ -19,15 +19,17 @@ export function AccountCard({
   isDestructive = false,
 }: AccountCardProps) {
   const borderColor = isDestructive
-    ? 'border-red-200 dark:border-red-900'
-    : 'border-neutral-200 dark:border-neutral-800'
+    ? 'border-red-200 dark:border-red-900 shadow-none'
+    : 'border-transparent shadow-none'
 
   return (
     <div
-      className={`overflow-hidden rounded-lg border ${borderColor} bg-[#FEFFFE] shadow-sm transition-shadow hover:shadow-md dark:bg-[#1A1A1A] dark:shadow-[0_1px_3px_0_rgba(0,0,0,0.3)] dark:hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)] ${className}`}
+      className={`overflow-hidden rounded-lg ${borderColor} bg-transparent ${className}`}
     >
-      <div className="relative flex flex-col space-y-3 p-3 md:space-y-4 md:p-4">
-        <div className="flex flex-col space-y-1 md:space-y-2">
+      <div
+        className={`relative flex flex-col justify-between p-3 md:flex-row md:items-center md:p-4`}
+      >
+        <div className="flex flex-1 flex-col space-y-1 pr-4 md:space-y-2">
           <h2
             className={`text-sm font-medium md:text-base ${isDestructive ? 'text-red-600 dark:text-red-400' : 'text-neutral-900 dark:text-neutral-100'}`}
           >
@@ -37,16 +39,19 @@ export function AccountCard({
             {description}
           </p>
         </div>
-        {children}
+        <div className="flex-shrink-0">{children}</div>
       </div>
       {footer && (
         <>
-          <div
-            className={`border-t bg-[#FBFBFA] dark:bg-[#252525] ${borderColor}`}
-          >
-            <div className="p-1.5 md:p-2">{footer}</div>
+          <div className="w-full px-4 pb-4 sm:ml-auto sm:w-auto sm:px-4 sm:pb-4">
+            <div className="flex justify-start bg-transparent sm:justify-end">
+              {footer}
+            </div>
           </div>
         </>
+      )}
+      {!footer && (
+        <div className="border-b border-neutral-200 py-2 dark:border-neutral-800"></div>
       )}
     </div>
   )

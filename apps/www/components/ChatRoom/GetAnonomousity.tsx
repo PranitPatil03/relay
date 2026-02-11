@@ -18,11 +18,8 @@ export default function GetAnonomousity() {
   }
 
   return (
-    <div className="flex-center mx-auto h-screen w-screen flex-col bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] p-4 [background-size:16px_16px] sm:p-6 lg:p-10">
-      <div className="">
-        <RelayLogo />
-      </div>
-      <div className="transition-ease xs:max-w-[90%] m-auto w-full max-w-[95%] space-y-4 rounded-2xl border-2 border-neutral-300 bg-white p-4 shadow-xl hover:shadow-2xl sm:max-w-[450px] sm:space-y-6 sm:p-8 md:p-10">
+    <div className="flex-center mx-auto h-screen w-screen flex-col p-4 sm:p-6 lg:p-10">
+      <div className="transition-ease xs:max-w-[90%] m-auto w-full max-w-[95%] space-y-4 rounded-2xl bg-transparent p-4 sm:max-w-[450px] sm:space-y-6 sm:p-8 md:p-10">
         <div>
           <h1 className="mb-2 text-xl font-semibold sm:mb-4 sm:text-2xl md:text-3xl">
             Choose Your Identity
@@ -33,7 +30,7 @@ export default function GetAnonomousity() {
           </p>
         </div>
 
-        <div className="rounded-lg border border-gray-200 bg-gray-50 p-3 sm:p-4">
+        <div className="p-3 sm:p-4">
           <div className="flex items-start gap-2 sm:gap-3">
             <Info className="mt-0.5 size-4 text-blue-500 sm:size-5" />
             <div>

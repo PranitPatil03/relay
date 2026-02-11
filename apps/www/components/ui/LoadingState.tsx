@@ -1,9 +1,9 @@
 'use client'
 
-import GridPattern from '@relay/ui/components/ui/GridPattern'
+
 import { cn } from '@relay/utils/src'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 import { RelayLoading } from './RelayLoading'
 
@@ -36,18 +36,7 @@ export const LoadingState = ({ fullScreen = false }: LoadingStateProps) => {
     }
   }, [])
 
-  const randomSquares = useMemo(
-    () =>
-      Array.from(
-        { length: Math.floor(Math.random() * 11) + 10 },
-        () =>
-          [
-            Math.floor(Math.random() * 11) + 30,
-            Math.floor(Math.random() * 20) + 0,
-          ] as [number, number]
-      ),
-    []
-  )
+
 
   return (
     <div
@@ -56,13 +45,7 @@ export const LoadingState = ({ fullScreen = false }: LoadingStateProps) => {
         fullScreen && 'h-screen'
       )}
     >
-      <GridPattern
-        width={40}
-        height={40}
-        className="absolute inset-0 size-full opacity-70 [mask-image:linear-gradient(to_top_left,white,transparent_70%)]"
-        strokeDasharray="4 4"
-        squares={randomSquares}
-      />
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

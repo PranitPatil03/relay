@@ -11,10 +11,7 @@ import { useUser } from '@/hooks/useSession'
 import { logout } from '@/lib/actions/authActions'
 
 import { LogoutIcon } from '../icons/animated/logout'
-import { UserIcon } from '../icons/animated/user'
 import FilledUser from '../icons/FilledUser'
-
-import AccountDialog from './AccountDialog'
 
 export function ProfileSection() {
   const { data, isLoading } = useUser()
@@ -65,14 +62,7 @@ export function ProfileSection() {
 
       {/* Actions */}
       <div className="space-y-1 border-t border-neutral-200/50 pt-3">
-        <AccountDialog
-          trigger={
-            <button className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-neutral-700 transition-colors hover:bg-[#FEFFFE]">
-              <UserIcon className="size-4 text-neutral-600" />
-              <span>Account</span>
-            </button>
-          }
-        />
+
         <button
           onClick={() => handleLogout(undefined)}
           className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-sm text-neutral-700 transition-colors hover:bg-[#FEFFFE]"

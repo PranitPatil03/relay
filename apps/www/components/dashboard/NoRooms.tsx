@@ -33,7 +33,7 @@ export default function NoRooms({ stats }: { stats: UserStats }) {
         <CardStack items={dummyRooms} />
       </div>
       <div className="z-50 text-center">
-        <h2 className="text-lg font-semibold text-gray-900 md:text-xl">
+        <h2 className="mt-4 text-lg font-semibold text-gray-900 md:text-xl">
           No active rooms found
         </h2>
         <p className="mt-2 text-sm text-gray-500 md:text-base">
